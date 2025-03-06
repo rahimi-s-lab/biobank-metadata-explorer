@@ -6,8 +6,6 @@ import string
 from langchain_chroma import Chroma
 from langchain.docstore.document import Document
 from langchain_ollama import OllamaEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_text_splitters import MarkdownHeaderTextSplitter
 
 
 CARTAGENE_FILE_PATH = "data/cartagene.xlsx"
@@ -19,7 +17,14 @@ def generate_random_id(length=8):
 
 # Process CSV file
 def get_cartagene_docs():
-    pass
+    data = read_cartagene_excel()
+    docs = [
+        Document(page_content=row["label"], metadata={
+            row
+        })
+        for row in data
+    ]
+    return docs
 
 def read_cartagene_excel():
     filepath = CARTAGENE_FILE_PATH 
@@ -28,7 +33,7 @@ def read_cartagene_excel():
     rows = []
     for index, row in df[1:].iterrows():
         rows.append({
-            "id": index,
+            "row": index + 2,
             "varname": row["Varname"],
             "categories": row["CATEGORIES"],
             "domain": row["DOMAIN_ENGLISH"],
@@ -82,30 +87,28 @@ def test():
     print(excel)
 # Example usage
 if __name__ == "__main__":
-    test()
-    if False:
-        import argparse
+    import argparse
 
-        parser = argparse.ArgumentParser(description="Build RAG with optional refresh.")
-        parser.add_argument('--refresh', action='store_true', help="Refresh the Chroma index.")
-        parser.add_argument('--model', type=str, default="llama3.2:3b", help="Specify the model to use.")
-        parser.add_argument('--limit', type=int, default=None, help="Limit the number of retrieved documents.")
-        args = parser.parse_args()
+    parser = argparse.ArgumentParser(description="Build RAG with optional refresh.")
+    parser.add_argument('--refresh', action='store_true', help="Refresh the Chroma index.")
+    parser.add_argument('--model', type=str, default="llama3.2:3b", help="Specify the model to use.")
+    parser.add_argument('--limit', type=int, default=None, help="Limit the number of retrieved documents.")
+    args = parser.parse_args()
 
-        rag = build_vector_index(refresh=args.refresh, model=args.model, limit=args.limit)
-        # Set up retriever with score threshold to filter weak matches
-        retriever = rag.as_retriever(
-            search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.0}  # Adjust threshold as needed (0-1)
-        )
-        while True:
-            # Further processing or querying can be done here
-            query = input("Enter your query: ")
-            results = retriever.invoke(query)
-            
-            print("\nRetrieved {len(results)} documents:")
-            for i, doc in enumerate(results):
-                print(f"====================== DOCUMENT {i} =============================")
-                print(f"Content: {doc.page_content[:100]}")
-                if doc.metadata.get('link'):
-                    print(f"Source: {doc.metadata['link']}")
-                # print(f"ID: {doc.metadata['id']}")
+    rag = build_vector_index(refresh=args.refresh, model=args.model, limit=args.limit)
+    # Set up retriever with score threshold to filter weak matches
+    retriever = rag.as_retriever(
+        search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.0}  # Adjust threshold as needed (0-1)
+    )
+    while True:
+        # Further processing or querying can be done here
+        query = input("Enter your query: ")
+        results = retriever.invoke(query)
+        
+        print("\nRetrieved {len(results)} documents:")
+        for i, doc in enumerate(results):
+            print(f"====================== DOCUMENT {i} =============================")
+            print(f"Content: {doc.page_content[:100]}")
+            if doc.metadata.get('link'):
+                print(f"Source: {doc.metadata['link']}")
+            # print(f"ID: {doc.metadata['id']}")
