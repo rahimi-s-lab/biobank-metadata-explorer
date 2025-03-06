@@ -35,10 +35,9 @@ def search():
 
 
 def format(doc):
-    return {"source_type": doc.metadata["source_type"], 
-            "content": doc.page_content.replace("\n\n", "\n").replace("\n", "</br>"),
-            "file_name": doc.metadata.get("file_name"), 
-            "link": doc.metadata.get("link")}
+    return doc.metadata
+            
+
 if __name__ == '__main__':
     import argparse
 

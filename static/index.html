@@ -66,14 +66,14 @@
         </form>
 
         <div id="search-results">
-            <div class="column" id="google_chat">
-                <h2>Google Chat</h2>
+            <div class="column" id="cartagene">
+                <h2>Cartagene</h2>
             </div>
-            <div class="column" id="gitlab_issues">
-                <h2>GitLab Issues</h2>
+            <div class="column" id="uk_biobank">
+                <h2>UK BioBank</h2>
             </div>
-            <div class="column" id="other_sources">
-                <h2>MD docs</h2>
+            <div class="column" id="clsa">
+                <h2>CLSA</h2>
             </div>
         </div>
     </div>
@@ -90,14 +90,14 @@
         }
 
         function displayResults(results) {
-            const googleChatColumn = document.getElementById('google_chat');
-            const gitlabIssuesColumn = document.getElementById('gitlab_issues');
-            const otherSourcesColumn = document.getElementById('other_sources');
+            const cartageneColumn = document.getElementById('cartagene');
+            const ukBiobankColumn = document.getElementById('uk_biobank');
+            const clsaColumn = document.getElementById('clsa');
 
             // Clear previous results
-            googleChatColumn.innerHTML = '<h2>Google Chat</h2>';
-            gitlabIssuesColumn.innerHTML = '<h2>GitLab Issues</h2>';
-            otherSourcesColumn.innerHTML = '<h2>.MDs</h2>';
+            cartageneColumn.innerHTML = '<h2>Cartagene</h2>';
+            ukBiobankColumn.innerHTML = '<h2>UK BioBank</h2>';
+            clsaColumn.innerHTML = '<h2>CLSA</h2>';
 
             results.forEach(doc => {
                 const resultDiv = document.createElement('div');
@@ -115,12 +115,12 @@
                     }
                 };
 
-                if (doc.source_type === 'google_chat') {
-                    googleChatColumn.appendChild(resultDiv);
-                } else if (doc.source_type === 'gitlab-issues') {
-                    gitlabIssuesColumn.appendChild(resultDiv);
+                if (doc.source_type === 'cartagene') {
+                    cartageneColumn.appendChild(resultDiv);
+                } else if (doc.source_type === 'uk-biobank') {
+                    ukBiobankColumn.appendChild(resultDiv);
                 } else {
-                    otherSourcesColumn.appendChild(resultDiv);
+                    clsaColumn.appendChild(resultDiv);
                 }
             });
         }

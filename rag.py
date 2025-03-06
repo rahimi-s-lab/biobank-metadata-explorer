@@ -19,9 +19,8 @@ def generate_random_id(length=8):
 def get_cartagene_docs():
     data = read_cartagene_excel()
     docs = [
-        Document(page_content=row["label"], metadata={
-            row
-        })
+        Document(page_content=row["label"], metadata=row | {"source_type": "cartagene"}
+        )
         for row in data
     ]
     return docs
@@ -39,7 +38,7 @@ def read_cartagene_excel():
             "domain": row["DOMAIN_ENGLISH"],
             "label": row["LABEL_ENGLISH"]
         })
-    return rows
+    return rows[:2]
 
 
 def init():
