@@ -1,0 +1,6 @@
+.python-version
+.venv/
+chroma_db/
+
+chroma_indexes/
+__pycache__/

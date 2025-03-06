@@ -1,0 +1,6 @@
+langchain
+langchain-ollama
+langchain-chroma
+flask
+pandas
+openpyxl

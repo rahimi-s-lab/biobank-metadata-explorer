@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev-search</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            overflow-wrap: break-word;
+        }
+        #search-results {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .column {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid #0d6efd;
+            box-shadow: 0 4px 8px rgba(13, 110, 253, 0.5);
+            border-radius: 5px;
+            background-color: #b513f597;
+        }
+        .result {
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: 1px solid #ccc;
+        }
+        .result:hover {
+            background-color: #b513f5c8;
+        }
+        .result a {
+            display: block;
+            margin-bottom: 5px;
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .form-control.small-input {
+            width: 20px; /* Adjust the width as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">dev-search</h1>
+        <form onsubmit="event.preventDefault(); search();">
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" id="query" class="form-control" placeholder="Enter your search query" />
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <label for="k" class="form-label me-2">k</label>
+                    <input type="number" id="k" class="form-control" value="5" placeholder="k" />
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="search-results">
+            <div class="column" id="google_chat">
+                <h2>Google Chat</h2>
+            </div>
+            <div class="column" id="gitlab_issues">
+                <h2>GitLab Issues</h2>
+            </div>
+            <div class="column" id="other_sources">
+                <h2>MD docs</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function search() {
+            const query = document.getElementById('query').value;
+            const k = document.getElementById('k').value;
+            const threshold = 0.01;
+            fetch(`http://127.0.0.1:5000/search?query=${encodeURIComponent(query)}&k=${k}&threshold=${threshold}`)
+                .then(response => response.json())
+                .then(data => displayResults(data))
+                .catch(error => console.error('Error:', error));
+        }
+
+        function displayResults(results) {
+            const googleChatColumn = document.getElementById('google_chat');
+            const gitlabIssuesColumn = document.getElementById('gitlab_issues');
+            const otherSourcesColumn = document.getElementById('other_sources');
+
+            // Clear previous results
+            googleChatColumn.innerHTML = '<h2>Google Chat</h2>';
+            gitlabIssuesColumn.innerHTML = '<h2>GitLab Issues</h2>';
+            otherSourcesColumn.innerHTML = '<h2>.MDs</h2>';
+
+            results.forEach(doc => {
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'result';
+                let content = doc.content.length > 300 ? doc.content.substring(0, 300) + '...' : doc.content;
+                resultDiv.innerHTML = doc.link ? `<a href="${doc.link}" target="_blank">Source</a>` : '';
+                resultDiv.innerHTML += `<span>${content}</span>`;
+
+                resultDiv.onclick = function() {
+                    const span = this.querySelector('span');
+                    if (span.textContent.endsWith('...')) {
+                        span.textContent = doc.content;
+                    } else {
+                        span.textContent = doc.content.length > 300 ? doc.content.substring(0, 300) + '...' : doc.content;
+                    }
+                };
+
+                if (doc.source_type === 'google_chat') {
+                    googleChatColumn.appendChild(resultDiv);
+                } else if (doc.source_type === 'gitlab-issues') {
+                    gitlabIssuesColumn.appendChild(resultDiv);
+                } else {
+                    otherSourcesColumn.appendChild(resultDiv);
+                }
+            });
+        }
+    </script>
+</body>
+</html> 
