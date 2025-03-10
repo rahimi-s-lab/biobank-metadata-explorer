@@ -3,11 +3,14 @@ import shutil
 import pandas as pd
 import random
 import string
+from dotenv import load_dotenv
+
 from langchain_chroma import Chroma
 from langchain.docstore.document import Document
 from langchain_ollama import OllamaEmbeddings
 from langchain_openai import OpenAIEmbeddings
 
+load_dotenv()
 
 CARTAGENE_FILE_PATH = "data/cartagene.xlsx"
 CARTAGENE_REMOVE_SUFFIXES = [

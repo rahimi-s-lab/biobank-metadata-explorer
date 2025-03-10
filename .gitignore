@@ -4,3 +4,5 @@ chroma_db/
 
 chroma_indexes/
 __pycache__/
+
+.env

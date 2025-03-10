@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify, send_from_directory
+from dotenv import load_dotenv
 
 from rag import build_vector_index
+
+load_dotenv()
 
 app = Flask(__name__, static_folder='static')
 
