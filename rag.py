@@ -9,10 +9,19 @@ from langchain_ollama import OllamaEmbeddings
 
 
 CARTAGENE_FILE_PATH = "data/cartagene.xlsx"
+CARTAGENE_REMOVE_SUFFIXES = [
+    "age", "year", "onset", "treated", "cm", "other", "open", "cause", 
+]
+CARTAGENE_REMOVE_CONTAININGS = [
+    "work", "language", "spoken", 
+]
+CARTAGENE_FOOD_VRANAME_PREFIXES = [
+    "sa", "ec", "ch"
+]
 
 DEFAULT_MARKDOWN_INNER_CHUNK_SPLIT_ON = "  \n"
 # Function to generate a random ID
-def generate_random_id(length=8):
+def generate_randoim_id(length=8):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
 # Process CSV file
@@ -37,20 +46,30 @@ def get_cartagene_docs():
 def read_cartagene_excel():
     filepath = CARTAGENE_FILE_PATH 
     with open(filepath, newline='', encoding='utf-8') as excel:
+
         df = pd.read_excel(filepath)
     rows = []
     for index, row in df[1:].iterrows():
+        if any(row["Varname"].startswith(prefix) for prefix in CARTAGENE_FOOD_VRANAME_PREFIXES) or \
+           any(row["Varname"].endswith(suffix) for suffix in CARTAGENE_REMOVE_SUFFIXES) or \
+           any(contained in row["Varname"] for contained in CARTAGENE_REMOVE_CONTAININGS) or \
+           row["Survey"].startswith("COVID"):
+            continue
         readable_varname = " ".join(row["Varname"].lower().split("_"))
+        readable_domain = " ".join(row["DOMAIN_ENGLISH"].lower().split("_")) if pd.notna(row["DOMAIN_ENGLISH"]) else ""
         rows.append({
             "row": index + 2,
             "varname": row["Varname"],
             "categories": row["CATEGORIES"],
             "domain": row["DOMAIN_ENGLISH"],
+            "label_english": row['LABEL_ENGLISH'],
             # Use the same label as what we are encoding
-            "label": f"{row['Varname']}: {row['LABEL_ENGLISH']}",
-            "encode": f"{readable_varname}: {row['LABEL_ENGLISH']}"
+            "label": f"{row['DOMAIN_ENGLISH']} -- {row['Varname']}: {row['LABEL_ENGLISH']}",
+            "encode": f"{readable_domain} -- {readable_varname}: {row['LABEL_ENGLISH']}"
         })
-    return rows[:100]
+        for field in "database", "CATEGORIES", "DOMAIN_ENGLISH", "DESCRIPTION_EN":
+            rows[-1].update({field.lower(): row[field]})
+    return rows
 
 
 def init():

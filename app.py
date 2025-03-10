@@ -45,9 +45,10 @@ if __name__ == '__main__':
     parser.add_argument('--refresh', action='store_true', help='Refresh the vector index', default=False)
     parser.add_argument('--host', type=str, default='127.0.0.1', help='Host to run the app on')
     parser.add_argument('--port', type=int, default=5000, help='Port to run the app on')
+    parser.add_argument('--limit', type=int, help='Limit the number of documents indexed', default=None)
     args = parser.parse_args()
 
     print(f"building index {args.refresh}")
-    index = build_vector_index(model=model, refresh=args.refresh)
+    index = build_vector_index(model=model, refresh=args.refresh, limit=args.limit)
 
     app.run(debug=True, host=args.host, port=args.port)
