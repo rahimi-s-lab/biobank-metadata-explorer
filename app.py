@@ -18,7 +18,7 @@ def serve_index():
 def search():
     query = request.args.get('query')
     k = request.args.get('k', default=3, type=int)  # Get 'k' from the request, default to 3 if not provided
-    threshold = request.args.get('threshold', default=0.1, type=float)
+    threshold = request.args.get('threshold', default=0.0, type=float)
     retriever = index.as_retriever(
             search_type="similarity_score_threshold", search_kwargs={"score_threshold": threshold, "k": k}  # Adjust threshold as needed (0-1)
         )
@@ -52,4 +52,4 @@ if __name__ == '__main__':
     print(f"building index {args.refresh}")
     index = build_vector_index(model=args.model, refresh=args.refresh, limit=args.limit)
 
-    app.run(debug=True, host=args.host, port=args.port)
+    app.run(debug=True, host=args.host, port=args.port, use_reloader=False)
