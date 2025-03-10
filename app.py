@@ -1,14 +1,11 @@
 from flask import Flask, request, jsonify, send_from_directory
-from langchain_core.vectorstores import InMemoryVectorStore
-from langchain_ollama import OllamaEmbeddings
 
 from rag import build_vector_index
 
 app = Flask(__name__, static_folder='static')
-model="mxbai-embed-large:latest"
 
-# Initialize the retriever
-embeddings = OllamaEmbeddings(model=model)
+# Initialized in the main block
+index = None
 
 @app.route('/')
 def serve_index():
@@ -26,7 +23,7 @@ def search():
         return jsonify({"error": "Query parameter is required"}), 400
 
     # Invoke the retriever with the query
-    results = retriever.invoke(query, search_kwargs={"k": 3})
+    results = retriever.invoke(query)
     
     # Format the results
     formatted_results = [format(doc) for doc in results]
@@ -42,6 +39,7 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('--model', type=str, default='mxbai', help='Model to use for embeddings')
     parser.add_argument('--refresh', action='store_true', help='Refresh the vector index', default=False)
     parser.add_argument('--host', type=str, default='127.0.0.1', help='Host to run the app on')
     parser.add_argument('--port', type=int, default=5000, help='Port to run the app on')
@@ -49,6 +47,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     print(f"building index {args.refresh}")
-    index = build_vector_index(model=model, refresh=args.refresh, limit=args.limit)
+    index = build_vector_index(model=args.model, refresh=args.refresh, limit=args.limit)
 
     app.run(debug=True, host=args.host, port=args.port)

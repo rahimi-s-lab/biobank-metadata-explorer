@@ -6,6 +6,7 @@ import string
 from langchain_chroma import Chroma
 from langchain.docstore.document import Document
 from langchain_ollama import OllamaEmbeddings
+from langchain_openai import OpenAIEmbeddings
 
 
 CARTAGENE_FILE_PATH = "data/cartagene.xlsx"
@@ -18,6 +19,16 @@ CARTAGENE_REMOVE_CONTAININGS = [
 CARTAGENE_FOOD_VRANAME_PREFIXES = [
     "sa", "ec", "ch"
 ]
+
+MODEL_MXBAI = "mxbai-embed-large:latest"
+MODEL_OPENAI_LARGE = "text-embedding-3-large"
+MODEL_OPENAI_SMALL = "text-embedding-3-small"
+
+MODELS = {
+    "mxbai": MODEL_MXBAI, 
+    "openai_large": MODEL_OPENAI_LARGE, 
+    "openai_small": MODEL_OPENAI_SMALL
+}
 
 DEFAULT_MARKDOWN_INNER_CHUNK_SPLIT_ON = "  \n"
 # Function to generate a random ID
@@ -80,7 +91,15 @@ def make_safe_for_path(string):
     # Replace any characters that are not alphanumeric or underscores with underscores
     return ''.join(char if char.isalnum() or char == '_' else '_' for char in string)
 # Build RAG
-def build_vector_index(refresh=False, model="mxbai-embed-large:latest", limit=None):
+
+def get_embeddings_model(model):
+    if "text-embedding" in model:
+        return OpenAIEmbeddings(model=model)
+    else:
+        return OllamaEmbeddings(model=model)
+
+
+def build_vector_index(refresh=False, model=MODEL_MXBAI, limit=None):
     """
     Some good queries: 
         - I am running out of ram, what can I do?
@@ -88,7 +107,9 @@ def build_vector_index(refresh=False, model="mxbai-embed-large:latest", limit=No
     """
     init()
     print(f"Using model: {model}")
-    embeddings = OllamaEmbeddings(model=model)
+    # Use model shorthand if it exists
+    embeddings = get_embeddings_model(MODELS.get(model, model))
+
     chroma_path = f"chroma_indexes/{make_safe_for_path(model)}"
     if refresh:
         if os.path.exists(chroma_path):
