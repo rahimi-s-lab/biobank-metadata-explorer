@@ -17,12 +17,21 @@ def generate_random_id(length=8):
 
 # Process CSV file
 def get_cartagene_docs():
+    # TODO (replace instructions_en with label for page_content, eg row 3608)
     data = read_cartagene_excel()
-    docs = [
-        Document(page_content=row["label"], metadata=row | {"source_type": "cartagene"}
-        )
-        for row in data
-    ]
+
+    docs = []
+    for row in data:
+        n = row["varname"].lower()
+        if "onset" in n or "age" in n or "year" in n or "treated" in n or "cm" in n:
+            continue
+        try:
+            docs.append(
+                Document(page_content=row["encode"], metadata=row | {"source_type": "cartagene"})
+            )
+        except:
+            pass
+
     return docs
 
 def read_cartagene_excel():
@@ -31,14 +40,17 @@ def read_cartagene_excel():
         df = pd.read_excel(filepath)
     rows = []
     for index, row in df[1:].iterrows():
+        readable_varname = " ".join(row["Varname"].lower().split("_"))
         rows.append({
             "row": index + 2,
             "varname": row["Varname"],
             "categories": row["CATEGORIES"],
             "domain": row["DOMAIN_ENGLISH"],
-            "label": row["LABEL_ENGLISH"]
+            # Use the same label as what we are encoding
+            "label": f"{row['Varname']}: {row['LABEL_ENGLISH']}",
+            "encode": f"{readable_varname}: {row['LABEL_ENGLISH']}"
         })
-    return rows[:2]
+    return rows[:100]
 
 
 def init():

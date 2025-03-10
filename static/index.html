@@ -102,17 +102,17 @@
             results.forEach(doc => {
                 const resultDiv = document.createElement('div');
                 resultDiv.className = 'result';
-                let content = doc.content.length > 300 ? doc.content.substring(0, 300) + '...' : doc.content;
-                resultDiv.innerHTML = doc.link ? `<a href="${doc.link}" target="_blank">Source</a>` : '';
-                resultDiv.innerHTML += `<span>${content}</span>`;
+                let content = doc.label.length > 300 ? doc.label.substring(0, 300) + '...' : doc.label;
+                // resultDiv.innerHTML = doc.link ? `<a href="${doc.link}" target="_blank">Source</a>` : '';
+                resultDiv.innerHTML += `<span class="label">${content}</span>`;
+                const hiddenSpan = document.createElement('span');
+                hiddenSpan.style.display = 'none';
+                hiddenSpan.textContent = doc.encode;
+                resultDiv.appendChild(hiddenSpan);
 
                 resultDiv.onclick = function() {
-                    const span = this.querySelector('span');
-                    if (span.textContent.endsWith('...')) {
-                        span.textContent = doc.content;
-                    } else {
-                        span.textContent = doc.content.length > 300 ? doc.content.substring(0, 300) + '...' : doc.content;
-                    }
+                    const span = this.querySelector('span.label');
+                    span.textContent = doc.label.length > 300 ? doc.label.substring(0, 300) + '...' : doc.label;
                 };
 
                 if (doc.source_type === 'cartagene') {
