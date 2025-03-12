@@ -5,6 +5,7 @@ The app has two interfaces: **web** (to explore) and **batch** file (to cross re
 Currently we supports Cartagene. Other biobanks to be added soon. 
 
 ## Installation
+- **Create virtual environment**: `$ python -m venv .venv` then `source .venv/bin/activate`
 - **Install pip requirements**: `$ pip install -r requirements.lock`
 
 ## Web usage
