@@ -4,9 +4,7 @@ The app has two interfaces: **web** (to explore) and **batch** file (to cross re
 Currently we supports Cartagene. Other biobanks to be added soon. 
 
 ## Installation
-- **Install Ollama**: `$ curl -fsSL https://ollama.com/install.sh | sh`
-- **Start Ollama server**: `$ Ollama serve`
-- **Install pip requiremnets**: `$ pip install -r requirements.lock`
+- **Install pip requirements**: `$ pip install -r requirements.lock`
 
 ## Web usage
 Run `python app.py --model openai_large`. On first run, this will take time, because it is indexing all the fields of the biobanks. When the app finally starts, access `127.0.0.1:5000` on your web browser and search! The `k` parameter controls how many results are returned. 
