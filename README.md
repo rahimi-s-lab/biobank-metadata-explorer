@@ -15,6 +15,7 @@ on your profile, and select "create new secret key".
 Run `python app.py --model openai_large`. On first run, this will take time, because 
 it is indexing all the fields of the biobanks. When the app finally starts, 
 access `127.0.0.1:5000` on your web browser and search! The `k` parameter controls how many results are returned. 
+![Screenshot 2025-03-12 at 4 50 04 PM](https://github.com/user-attachments/assets/ff248730-ca76-4329-b6de-628c84880630)
 
 ## Batch usage
 To search in batch, the queries/source fields can be listed in an excel file. 
@@ -26,6 +27,8 @@ To generate the cross reference file run
 row in the input file (see `data/dt_source_fields.xlsx`). 
 A cross reference file for Cartagene is already commited in this repo: 
 `data/cross_reference_cartagene.xlsx`.   
+![Screenshot 2025-03-12 at 4 50 28 PM](https://github.com/user-attachments/assets/202d3fee-a4eb-450c-b1fe-1ac28d3a83c9)
+
 
 ### Columns of the input file
 1. `Feature`: the query or the name of the source field
