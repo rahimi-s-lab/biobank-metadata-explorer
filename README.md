@@ -1,5 +1,5 @@
 # Biobank Metadata Explorer
-Explore different biobanks' fields with an easy to use search and cross reference with 
+Explore different biobanks' fields with an easy to use search, and cross reference with 
 fields that you're interested in, in batch.  
 The app has two interfaces: **web** (to explore) and **batch** file (to cross reference in batch).  
 Currently we supports Cartagene. Other biobanks to be added soon. 
