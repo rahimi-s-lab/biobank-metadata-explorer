@@ -1,7 +1,7 @@
 import pandas as pd
 from rag import build_vector_index
 
-def cross_reference_features(input_file, output_file, model="openai_large", k=10):
+def cross_reference_features(input_file, output_file, model="openai_large", k=3):
     # Build the vector index
     print("Building vector index...")
     index = build_vector_index(model=model)
@@ -17,6 +17,7 @@ def cross_reference_features(input_file, output_file, model="openai_large", k=10
     # Initialize lists to store results
     results = {
         "Feature": [],
+        "Source Section": [],
         "Domain": [],
         "Varname": [],
         "Label english": [],
@@ -25,16 +26,19 @@ def cross_reference_features(input_file, output_file, model="openai_large", k=10
     
     # Process each feature
     total_features = len(input_df)
+    input_df['Override k'] = input_df['Override k'].fillna(k)
     for idx, row in input_df.iterrows():
         feature = row["Feature"]
+        
         print(f"Processing feature {idx + 1}/{total_features}: {feature}")
         
-        # Query the retriever
-        docs = retriever.invoke(feature)
+        # Query the retriever with the specified k
+        docs = retriever.invoke(feature, k=int(row['Override k']))
         
         # Store results for each returned document
         for doc in docs:
             results["Feature"].append(feature)
+            results["Source Section"].append(row["Section"])
             results["Domain"].append(doc.metadata.get("domain", ""))
             results["Varname"].append(doc.metadata.get("varname", ""))
             results["Label english"].append(doc.metadata.get("label_english", ""))
