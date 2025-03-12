@@ -7,6 +7,9 @@ Currently we supports Cartagene. Other biobanks to be added soon.
 ## Installation
 - **Create virtual environment**: `$ python -m venv .venv` then `source .venv/bin/activate`
 - **Install pip requirements**: `$ pip install -r requirements.lock`
+- **Create your OpenAI key**: log into OpenAI, go to the [API keys page](https://platform.openai.com/settings/organization/api-keys)
+on your profile, and select "create new secret key". 
+- **Add  OPENAI_API_KEY**: take the key generated in the step above, create a file named `.env` in the project folder and add the following: `OPENAI_API_KEY=<key_from_above>`. You can also export it as an environment variable instead: `$ export OPENAI_API_KEY=<key_from_above>`. 
 
 ## Web usage
 Run `python app.py --model openai_large`. On first run, this will take time, because 
