@@ -1,0 +1,125 @@
+c: Questionnaire
+sc: Socio-demographic
+
+bl, fu1, fu2; Age / Âge (AGE); Education / Éducation (ED); Province ofresidence / Province de résidence (WGHTS); Urban / RuralClassification / Classement des zones urbaines / rurales(SDC); Religion / Religion (SDC); Marital status / Étatmatrimonial (SDC); Sexual orientation / Orientation sexuelle(SDC); Income / Revenu (INC); Wealth / Patrimoine (WEA);Home Ownership / Propriétaires (OWN); Population Centre /Centre de Population (SDC); Population Density / Densité dePopulation (SDC)
+
+bl; Sex / Sexe (SEX); Country of birth / Pays de naissance (SDC);Ethnicity1 / Ethnicité1 (SDC); Culture1 / Culture1 (SDC);Language1 / Langue1 (SDC); Veteran Identifiers / Ancienscombattants (VET)
+
+fu1, fu2; Gender Identity / Identité de genre (SDC)
+
+sc: Lifestyle and Behavior
+
+bl, fu1, fu2; Smoking / Consommation de tabac (SMK); Alcohol Use /Consommation d’alcool (ALC); Nutrition: Short DietQuestionnaire / Nutrition : Questionnaire court sur le régimealimentaire (NUT; COM); Nutritional Risk / Risque nutritionnel(NUR); Physical Activities / Activités physiques (PA2)
+
+bl; Dietary Supplement Use / Usage de suppléments alimentaires(DSU)
+
+fu1, fu2; Dietary Supplement Use / Usage de suppléments alimentaires(DSU; TRM)
+
+sc: Physical health
+bl, fu1, fu2; Self-report Height and Weight / Taille et poids autodéclarés(HWT; TRM); Measured Height and Weight2 / Taille et poidsmesurés2 (WGT, HGT; COM); General Health / État général de santé (GEN); General Health – open text on healthy aging /État général de santé – question ouverte (sur le vieillissementen santé); Women’s Health / Santé des femmes (WHO); Vision/ Vision (VIS); Hearing / Audition (HRG); Oral Health / Santébucco-dentaire (ORH); Functional Status3 / Capacitésfonctionnelles (FUL); Basic Activities of Daily Living / Activitésde base de la vie quotidienne (ADL); Instrumental Activities ofDaily Living / Activités instrumentals de la vie quotidienne(IAL); Sleep / Sommeil (SLE; COM); Snoring / Ronflement(SNO; COM); Pain and Discomfort / Douleurs et malaises(HUP); Injuries / Blessures (INJ); Falls / Chutes (FAL); HealthCare Utilization / Utilisation des soins de santé (HCU); LifeSpace Index / Évaluation de l’aire de mobilité (LSI; COM)
+
+
+bl, fu1, fu2; Self-reported Chronic Conditions / Problèmes de santéchroniques autodéclarés: Osteoarthritis or arthritis / Arthroseou arthrite (CCT/CCC); Respiratory / Respiratoire (CCT/CCC);Cardiovascular / Cardiovasculaire (CCT/CCC); Stroke / AVC(CCT/CCC); Neurological / Neurologique (CCT/CCC);Gastrointestinal / Gastrointestinal (CCT/CCC); Diseases of theeye / Maladies de l'œil (CCT/CCC); Cancer / Cancer(CCT/CCC); Mental Health / Santé mentale (CCT/CCC); OtherConditions / Autres maladies (CCT/CCC); Infections /Infections (CCT/CCC);
+
+bl, fu1, fu2; Medication Use / Consommation de médicaments (MED; TRM);
+
+bl, fu1, fu2; Disease Algorithms4 and Disease Symptoms / Algorithmes4 et symptômes de maladies:Diabetes5 / Diabète5 (DIA; COM); Stroke/CerebrovascularEvent5 / AVC5 (STR; COM); Traumatic Brain Injury5 /Traumatisme crânien5 (TBI; COM); Hypo and Hyperthyroidism5/ Hypo-et hyperthyroïdie5 (HYP; COM); Hypertension5 /Hypertension5 (HBP; COM); Ischemic Heart Disease5 /Cardiopathie ischémique5 (IHD; COM); WHO RoseQuestionnaire / Questionnaire Rose de l’OMS (ROS; COM);Osteoarthritis of the Hand / Arthrose de la main (OSA; COM);Osteoarthritis of the Hip / Arthrose de la hanche (OSH; COM);Osteoarthritis of the Knee / Arthrose du genou (OSK; COM);Musculoskeletal: other / Musculosquelettique: autre (OAR;COM); Osteoporosis5 / Ostéoporose5 (OST; COM); Neuro-psychiatric5 / Neuropsychiatrique5 (DPR; COM); Parkinsonism5/ Parkinsonisme5 (PKD); Chronic Airflow Obstruction5 /Obstruction chronique des voies respiratoires5 (CAO; COM)
+
+bl; Falls and Consumer Products / Chutes et produits deconsommation (FAL)
+
+fu1, fu2; Preventative Health Behaviours / Comportement préventif enmatière de santé (PHB); Hearing Handicap Inventory for theElderly / Questionnaire de dépistage d'un problème auditifchez les personnes âgées (HRG); Unmet Health Care Needs /Besoins de santé non comblés (MET)Epilepsy / Épilepsie (EPI)
+
+fu1; Preventative Health Behaviours / Comportement préventif enmatière de santé (PHB)
+
+fu2; Aortic Valve Stenosis / Sténose de la valve aortique (AOR) ;Preventative Health Behaviours / Comportement préventif enmatière de santé (PHB; COM)
+
+sc: Medications
+bl, fu1, fu2; Medications (Baseline and Follow-up 1 only) / Médicaments(vague de départ et 1er suivi seulement) (MEDI; COM)
+
+sc: Psychological health
+bl, fu1, fu2; Depression / Dépression (DEP); Psychological Distress /Détresse psychologique (K10; COM); Satisfaction with Life /Satisfaction à l'égard de la vie (SLS)
+
+bl, fu1; Personality Traits / Traits de caractère (PER; COM)
+
+fu1, fu2; Loneliness Scale / Solitude (LONE)
+
+bl, fu2; Posttraumatic Stress Disorder / Trouble de stress post-traumatique (PSD)
+
+fu1; Childhood Maltreatment and Health Across the Lifespan /Maltraitance pendant l’enfance et santé tout au long de la vie(ACE; CEX); Elder Abuse / Maltraitance envers les aînés(PSY; PHY; FIN)
+
+fu2; Generalized Anxiety Disorder / Désordre anxieux généralisé(GAD); Positive Mental Health / Santé mentale positive (PMH);Intimate Partner Violence / La violence conjugale (IPV; COM) ;Resiliency Scale / Échelle de résilience (RES; COM)
+
+sc: Cognition scores
+bl, fu1, fu2; REYI / REYI (COG); REYII / REYII (COG); Animal FluencyTest / Test de fluence (animaux) (COG); Mental AlternationTest / Test d’alternance mentale (COG); Time-BasedProspective Memory Test / Test de mémoire prospective enfonction du temps (TMT; COM); Event-Based ProspectiveMemory Test / Test de mémoire prospective en fonction d’unévénement (PMT; COM); Stroop – Victoria Version / Stroop –version de Victoria (STP; COM); Controlled Oral WordAssociation / Test oral contrôlé d’association de mots (FAS;COM); Choice Reaction Time / Test de temps de réaction(CRT; COM); Cognitive norms / Normes cognitives (COG)
+
+fu1, fu2; Subjective Cognitive Decline / Déclin cognitif subjectif (SCD)
+
+fu1; Meta Memory / Métamémoire (MEM)
+
+fu2; Meta Memory / Métamémoire (MEM; COM)
+
+sc: Labour force
+bl, fu1, fu2; Retirement Status / Retraite (RET); Pre-Retirement LabourForce Participation / Participation à la population active avantla retraite (LFP); Labour Force / Population active (LBF);Retirement Planning / Planification de la retraite (RPL)
+
+bl, fu1; Pre-Retirement Labour Force Participation – open textquestion7 / Participation à la population active avant la retraite– question ouverte7; Labour Force – open text question7 /Population active – question ouverte
+
+fu1, fu2; Work Limitations Questionnaire / Questionnaire sur leslimitations au travail (WLQ)
+
+sc: Social health
+bl, fuq, fu2; Social Networks / Réseaux sociaux (SN); Social Support –Availability / Soutien social – Disponibilité (SSA); SocialParticipation / Participation sociale (SPA); Care Receiving 1 /Formal Care / Soins reçus 1 / Soins à domicile (CR1); CareReceiving 2 / Informal Care / Soins reçus 2 / Autres types de
+soins (CR2); Care Giving / Prestation de soins (CAG); OnlineSocial Networking / Réseautage social en ligne (INT);Transportation, Mobility, Migration / Transport, mobilité,migration (TRA); Built Environments / Environnementsconstruits (ENV)
+
+bl, fu1; Social Inequality / Inégalité sociale (SEQ)
+
+fu1, fu2; Social Cohesion / Cohésion sociale (SPA)
+
+c: Physical assessments
+bl, fu1, fu2; Contraindications Questionnaire / Questionnaire sur les contre-indications (ICQ; COM); Hip and WaistCircumference / Circonférence taille et hanche (WHC; COM); 4 Metre Walk / Marche sur 4 m (WLK;COM); Timed Get Up and Go / Lever-marcher chronométré (TUG; COM); Standing Balance / Équilibredebout (BAL; COM); Chair Rise: Balance and Coordination / Se lever d’une chaise: équilibre etcoordination (CR; COM); Grip Strength / Force de préhension (GS; COM); Pulse Rate and BloodPressure / Fréquence du pouls et pression sanguine (BP; COM); Body Composition (Whole Body andBody Parts) / Composition corporelle (Corps entier et parties du corps) (DXA; COM); Bone Density byDEXA / Densité osseuse par DEXA (DXA; COM): Dual Hip / Deux hanches; Forearm / Avant-bras;Whole Body / Corps entier ; Basic Activities of; Spirometry / Spirométrie (SPR; COM); Hearing / Audition(HRG; COM); Visual Acuity / Acuité visuelle (VA; COM); Tonometry / Tonométrie (TON; COM);Electrocardiogram / Électrocardiogramme (ECG; COM)
+
+bl, fu1, fu2; Carotid Intima Media Thickness9 / Épaisseur de l’intima media carotidienne9 (CI; COM)
+
+fu2; Sitting Height / Taille assise (SIT; COM); Canadian Digit Triplet Test CDTT / Test des trois chiffres(DTT; COM)
+
+c: Blood biomarkers
+bl, fu1; Blood Biomarkers
+
+c: Epigenetics
+bl; Epigenetics
+
+c: Genomics
+bl; Genomics
+
+
+c: Metabolomics
+bl; Metabolomics
+
+
+c: Environmental indicators
+sc: Air category
+bl; Nitrogen Dioxide / Dioxyde d'azote; Sulfur Dioxide11 / Dioxyde de soufre11; Fine Particulate Matter (v1)11 / Fines particules de matières(v1)11; Proximity to Roadways / Proximité des routes
+
+fu1; Fine Particulate Matter (v3)11 / Fines particules de matières (v3)11;
+
+fu1, fu2; Smoke exposure11 / Exposition à la fumée11
+
+bl, fu2; Ozone11 / Ozone11
+
+sc: Neighborhood factors
+bl, fu1, fu2; Material and Social Deprivation Indices11 / Indices de défavorisationmatérielle et sociale
+
+bl; Nighttime Light11 / Luminosité nocturne
+
+fu1; Canadian Access to Employment / Accès canadien à l’emploi;Canadian Marginalization Index / Indice canadien demarginalisation; Noise / Bruit
+
+bl, fu1; Canadian Active Living Environments (Can-ALE) Data11 / Données
+sur les milieux de vie actifs canadiens (Can-ALE)
+
+fu2; Proximity Measures (StatsCan)11 / Mesures de proximité (StatistiqueCanada)11; Spatial Accessibility Measures11 / Mesures d'accessibilité
+spatiale11; Public Transportation11 / Transport en commun
+
+sc: Greenness and weather
+bl, fu1; Normalized Difference Vegetation Index (NDVI; greenness)11 /Indice de végétation par différence normalisée (IVDN; verdeur)
+
+fu1; Local Climate Zone / Zone climatique locale; Ultraviolet / Ultra-violet
+
+bl, fu1, fu2; Meteorological Data (weather and climate)11 / Donnéesmétéorologiques (météo et climat)
