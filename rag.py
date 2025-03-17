@@ -12,6 +12,7 @@ from langchain_openai import OpenAIEmbeddings
 
 load_dotenv()
 
+CLSA_FILE_PATH = "data/clsa.xlsx"
 CARTAGENE_FILE_PATH = "data/cartagene.xlsx"
 CARTAGENE_REMOVE_SUFFIXES = [
     "age", "year", "onset", "treated", "cm", "other", "open", "cause", 
@@ -85,6 +86,26 @@ def read_cartagene_excel():
             rows[-1].update({field.lower(): row[field]})
     return rows
 
+def read_clsa_excel():
+    df = pd.read_excel(CLSA_FILE_PATH)
+    
+    rows = []
+    for index, row in df[1:].iterrows():
+        # Create a readable encode string from category and varname
+        readable_category = " ".join(row["category"].lower().split("_")) 
+        readable_varname = " ".join(row["varname"].lower().split("_"))
+        
+        rows.append({
+            "row": index + 2,  # Excel rows start at 1, and we add 1 for header
+            "varname": row["varname"],
+            "category": row["category"],
+            "subcategory": row["subcategory"],
+            "availability": row["availability"],
+            "code": row["code"],
+            "encode": f"{readable_category}: {readable_varname}"
+        })
+    
+    return rows
 
 def init():
     # Create directory "chroma_indexes" if it does not exist
@@ -137,32 +158,34 @@ def build_vector_index(refresh=False, model=MODEL_MXBAI, limit=None):
 
 
 def test():
-    excel = read_cartagene_excel()[:10]
-    print(excel)
+    excel = read_clsa_excel()
+    print(excel[-100])
 # Example usage
 if __name__ == "__main__":
-    import argparse
+    test()
+    if False:
+        import argparse
 
-    parser = argparse.ArgumentParser(description="Build RAG with optional refresh.")
-    parser.add_argument('--refresh', action='store_true', help="Refresh the Chroma index.")
-    parser.add_argument('--model', type=str, default="llama3.2:3b", help="Specify the model to use.")
-    parser.add_argument('--limit', type=int, default=None, help="Limit the number of retrieved documents.")
-    args = parser.parse_args()
+        parser = argparse.ArgumentParser(description="Build RAG with optional refresh.")
+        parser.add_argument('--refresh', action='store_true', help="Refresh the Chroma index.")
+        parser.add_argument('--model', type=str, default="llama3.2:3b", help="Specify the model to use.")
+        parser.add_argument('--limit', type=int, default=None, help="Limit the number of retrieved documents.")
+        args = parser.parse_args()
 
-    rag = build_vector_index(refresh=args.refresh, model=args.model, limit=args.limit)
-    # Set up retriever with score threshold to filter weak matches
-    retriever = rag.as_retriever(
-        search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.0}  # Adjust threshold as needed (0-1)
-    )
-    while True:
-        # Further processing or querying can be done here
-        query = input("Enter your query: ")
-        results = retriever.invoke(query)
-        
-        print("\nRetrieved {len(results)} documents:")
-        for i, doc in enumerate(results):
-            print(f"====================== DOCUMENT {i} =============================")
-            print(f"Content: {doc.page_content[:100]}")
-            if doc.metadata.get('link'):
-                print(f"Source: {doc.metadata['link']}")
-            # print(f"ID: {doc.metadata['id']}")
+        rag = build_vector_index(refresh=args.refresh, model=args.model, limit=args.limit)
+        # Set up retriever with score threshold to filter weak matches
+        retriever = rag.as_retriever(
+            search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.0}  # Adjust threshold as needed (0-1)
+        )
+        while True:
+            # Further processing or querying can be done here
+            query = input("Enter your query: ")
+            results = retriever.invoke(query)
+            
+            print("\nRetrieved {len(results)} documents:")
+            for i, doc in enumerate(results):
+                print(f"====================== DOCUMENT {i} =============================")
+                print(f"Content: {doc.page_content[:100]}")
+                if doc.metadata.get('link'):
+                    print(f"Source: {doc.metadata['link']}")
+                # print(f"ID: {doc.metadata['id']}")

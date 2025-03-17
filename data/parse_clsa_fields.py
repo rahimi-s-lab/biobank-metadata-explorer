@@ -33,7 +33,7 @@ def parse_clsa_fields(file_path):
                 availability = availability_fields[0].strip()
                 fields_part = availability_fields[1].strip()
                 
-                # Split individual fields
+                # Semicolon inside parantheses are not field splittors:
                 fields_part = re.sub(r'\(([^)]+)\)', lambda m: '(' + m.group(1).replace(';', ':') + ')', fields_part)
                 fields = fields_part.split(';')
                 
@@ -50,9 +50,8 @@ def parse_clsa_fields(file_path):
                     field_code = field_code_match.group(1).strip() if field_code_match else ""
                     
                     results.append({
-                        'field': field,
-                        'field_name': field_name,
-                        'field_code': field_code,
+                        'varname': field_name,
+                        'code': field_code.replace(":", ";"),
                         'category': current_category,
                         'subcategory': current_subcategory,
                         'availability': availability
@@ -68,7 +67,7 @@ def parse_clsa_fields(file_path):
 
 # Execute the parsing
 file_path = 'data/clsa_fields.txt'
-output_path = 'clsa_fields.xlsx'
+output_path = 'data/clsa.xlsx'
 
 df = parse_clsa_fields(file_path)
 df.to_excel(output_path, index=False)
