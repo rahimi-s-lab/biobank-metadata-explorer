@@ -58,6 +58,20 @@ def get_cartagene_docs():
 
     return docs
 
+def get_clsa_docs():
+    data = read_clsa_excel()
+
+    docs = []
+    for row in data:
+        try:
+            docs.append(
+                Document(page_content=row["encode"], metadata=row | {"source_type": "cartagene"})
+            )
+        except:
+            print(f"failed to parse {row=}")
+
+    return docs
+
 def read_cartagene_excel():
     filepath = CARTAGENE_FILE_PATH 
     with open(filepath, newline='', encoding='utf-8') as excel:
@@ -123,7 +137,21 @@ def get_embeddings_model(model):
         return OllamaEmbeddings(model=model)
 
 
-def build_vector_index(refresh=False, model=MODEL_MXBAI, limit=None):
+def build_vector_indices(datasets=["cartagene", "clsa"], refresh=False, model=MODEL_MXBAI, limit=None):
+    doc_mapping = {
+        "cartagene": get_cartagene_docs, 
+        "clsa": get_clsa_docs
+    }
+
+    vector_indexes = {}
+
+    for dataset in datasets:
+        vector_indexes[dataset] = build_vector_index(doc_mapping[dataset](), dataset, refresh=refresh, model=model, limit=limit)
+
+    return vector_indexes
+
+
+def build_vector_index(docs, subpath, refresh=False, model=MODEL_MXBAI, limit=None):
     """
     Some good queries: 
         - I am running out of ram, what can I do?
@@ -134,19 +162,19 @@ def build_vector_index(refresh=False, model=MODEL_MXBAI, limit=None):
     # Use model shorthand if it exists
     embeddings = get_embeddings_model(MODELS.get(model, model))
 
-    chroma_path = f"chroma_indexes/{make_safe_for_path(model)}"
+    chroma_path = f"chroma_indexes/{subpath}/{make_safe_for_path(model)}"
+
     if refresh:
         if os.path.exists(chroma_path):
             print("Deleting existing Chroma index...")
             shutil.rmtree(chroma_path)
+
     # Check if Chroma index already exists
     if os.path.exists(chroma_path):
         print("Loading existing Chroma index...")
         return Chroma(persist_directory=chroma_path, embedding_function=embeddings)
 
     print("Building new Chroma index...")
-    docs = []
-    docs.extend(get_cartagene_docs())
     if limit: 
         docs = docs[:limit]
     
@@ -162,16 +190,18 @@ def test():
     print(excel[-100])
 # Example usage
 if __name__ == "__main__":
-    test()
-    if False:
-        import argparse
+    import argparse
 
-        parser = argparse.ArgumentParser(description="Build RAG with optional refresh.")
-        parser.add_argument('--refresh', action='store_true', help="Refresh the Chroma index.")
-        parser.add_argument('--model', type=str, default="llama3.2:3b", help="Specify the model to use.")
-        parser.add_argument('--limit', type=int, default=None, help="Limit the number of retrieved documents.")
-        args = parser.parse_args()
+    parser = argparse.ArgumentParser(description="Build RAG with optional refresh.")
+    parser.add_argument('--test', action='store_true')
+    parser.add_argument('--refresh', action='store_true', help="Refresh the Chroma index.")
+    parser.add_argument('--model', type=str, default="llama3.2:3b", help="Specify the model to use.")
+    parser.add_argument('--limit', type=int, default=None, help="Limit the number of retrieved documents.")
+    args = parser.parse_args()
 
+    if args.test:
+        test()
+    else:
         rag = build_vector_index(refresh=args.refresh, model=args.model, limit=args.limit)
         # Set up retriever with score threshold to filter weak matches
         retriever = rag.as_retriever(
