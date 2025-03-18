@@ -65,7 +65,7 @@ def get_clsa_docs():
     for row in data:
         try:
             docs.append(
-                Document(page_content=row["encode"], metadata=row | {"source_type": "cartagene"})
+                Document(page_content=row["encode"], metadata=row | {"source_type": "clsa"})
             )
         except:
             print(f"failed to parse {row=}")
@@ -106,8 +106,8 @@ def read_clsa_excel():
     rows = []
     for index, row in df[1:].iterrows():
         # Create a readable encode string from category and varname
-        readable_category = " ".join(row["category"].lower().split("_")) 
-        readable_varname = " ".join(row["varname"].lower().split("_"))
+        readable_category = " ".join(row["category"].split("_")) 
+        readable_varname = " ".join(row["varname"].split("_"))
         
         rows.append({
             "row": index + 2,  # Excel rows start at 1, and we add 1 for header
@@ -137,18 +137,18 @@ def get_embeddings_model(model):
         return OllamaEmbeddings(model=model)
 
 
-def build_vector_indices(datasets=["cartagene", "clsa"], refresh=False, model=MODEL_MXBAI, limit=None):
+def build_vector_indices(datasets=("cartagene", "clsa"), refresh=False, model=MODEL_MXBAI, limit=None):
     doc_mapping = {
         "cartagene": get_cartagene_docs, 
         "clsa": get_clsa_docs
     }
 
-    vector_indexes = {}
+    vector_indices = {}
 
     for dataset in datasets:
-        vector_indexes[dataset] = build_vector_index(doc_mapping[dataset](), dataset, refresh=refresh, model=model, limit=limit)
+        vector_indices[dataset] = build_vector_index(doc_mapping[dataset](), dataset, refresh=refresh, model=model, limit=limit)
 
-    return vector_indexes
+    return vector_indices
 
 
 def build_vector_index(docs, subpath, refresh=False, model=MODEL_MXBAI, limit=None):
@@ -186,8 +186,9 @@ def build_vector_index(docs, subpath, refresh=False, model=MODEL_MXBAI, limit=No
 
 
 def test():
-    excel = read_clsa_excel()
-    print(excel[-100])
+    vector_indices = build_vector_indices(datasets=["clsa"])
+    assert "clsa" in vector_indices
+
 # Example usage
 if __name__ == "__main__":
     import argparse
@@ -195,27 +196,30 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Build RAG with optional refresh.")
     parser.add_argument('--test', action='store_true')
     parser.add_argument('--refresh', action='store_true', help="Refresh the Chroma index.")
-    parser.add_argument('--model', type=str, default="llama3.2:3b", help="Specify the model to use.")
+    parser.add_argument('--model', type=str, default=MODEL_MXBAI, help="Specify the model to use.")
     parser.add_argument('--limit', type=int, default=None, help="Limit the number of retrieved documents.")
+    parser.add_argument('--datasets', type=str, nargs='+', help="Specify the datasets to use for building the vector index.", default=("cartagene", "clsa"))
     args = parser.parse_args()
 
     if args.test:
         test()
     else:
-        rag = build_vector_index(refresh=args.refresh, model=args.model, limit=args.limit)
+        dbs = build_vector_indices(args.datasets, args.refresh, args.model, args.limit)
         # Set up retriever with score threshold to filter weak matches
-        retriever = rag.as_retriever(
+        retrievers = {dataset: db.as_retriever(
             search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.0}  # Adjust threshold as needed (0-1)
-        )
+        ) for dataset, db in dbs.items()}
         while True:
             # Further processing or querying can be done here
             query = input("Enter your query: ")
-            results = retriever.invoke(query)
-            
-            print("\nRetrieved {len(results)} documents:")
-            for i, doc in enumerate(results):
-                print(f"====================== DOCUMENT {i} =============================")
-                print(f"Content: {doc.page_content[:100]}")
-                if doc.metadata.get('link'):
-                    print(f"Source: {doc.metadata['link']}")
-                # print(f"ID: {doc.metadata['id']}")
+            result_sets = {dataset: retriever.invoke(query) for dataset, retriever in retrievers.items()}
+
+            for dataset, results in result_sets.items():
+                print(f"++++++++++{dataset}++++++++++++++++=")
+                print("\nRetrieved {len(results)} documents:")
+                for i, doc in enumerate(results):
+                    print(f"====================== DOCUMENT {i} =============================")
+                    print(f"Content: {doc.page_content[:100]}")
+                    if doc.metadata.get('link'):
+                        print(f"Source: {doc.metadata['link']}")
+                    # print(f"ID: {doc.metadata['id']}")
