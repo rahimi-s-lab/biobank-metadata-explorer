@@ -116,6 +116,7 @@ def read_clsa_excel():
             "subcategory": row["subcategory"],
             "availability": row["availability"],
             "code": row["code"],
+            "label": f"{readable_category}: {row['varname']}",
             "encode": f"{readable_category}: {readable_varname}"
         })
     
