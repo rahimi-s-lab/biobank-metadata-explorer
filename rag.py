@@ -120,6 +120,10 @@ def read_cartagene_excel():
         })
         for field in "database", "CATEGORIES", "DOMAIN_ENGLISH", "DESCRIPTION_EN":
             rows[-1].update({field.lower(): row[field]})
+    annotator = CartageneRelatedFieldAnnotator(rows)
+    for row in rows:
+        related_fields = annotator.get_related(row["varname"])
+        row["related_fields"] = str(list(related_fields))
     return rows
 
 def read_clsa_excel():

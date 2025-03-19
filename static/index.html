@@ -117,6 +117,10 @@
 
                 if (doc.source_type === 'cartagene') {
                     cartageneColumn.appendChild(resultDiv);
+                    const relatedFields = document.createElement('div');
+                    relatedFields.className = 'related-fields';
+                    relatedFields.textContent = "RELATED FIElDS: " + doc.related_fields;
+                    resultDiv.appendChild(relatedFields);
                 } else if (doc.source_type === 'uk-biobank') {
                     ukBiobankColumn.appendChild(resultDiv);
                 } else {
