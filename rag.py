@@ -1,3 +1,4 @@
+from collections import defaultdict
 import os
 import shutil
 import pandas as pd
@@ -35,7 +36,28 @@ MODELS = {
 }
 
 DEFAULT_MARKDOWN_INNER_CHUNK_SPLIT_ON = "  \n"
-# Function to generate a random ID
+
+
+class CartageneRelatedFieldAnnotator:
+    """For each varname abc_def, get all abc_def_XXX and abc_def varnames if they are in the dataset"""
+    def __init__(self, df: pd.DataFrame):
+        self.df = df
+        self.related_sets = defaultdict(lambda: set())
+        for row in df:
+            self.add(row["varname"])
+
+    def add(self, varname: str):
+        prefix = self.get_prefix(varname)
+        self.related_sets[varname].add(varname)
+        self.related_sets[prefix].add(varname)
+
+    def get_prefix(self, varname: str):
+        return varname.rsplit('_', 1)[0] if '_' in varname else varname
+
+    def get_related(self, varname: str):
+        return (self.related_sets[varname] | self.related_sets[self.get_prefix(varname)]) - {varname}
+
+
 def generate_randoim_id(length=8):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 
