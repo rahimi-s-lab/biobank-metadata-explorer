@@ -113,7 +113,8 @@ def read_cartagene_excel():
             "varname": row["Varname"],
             "categories": row["CATEGORIES"],
             "domain": row["DOMAIN_ENGLISH"],
-            "label_english": row['LABEL_ENGLISH'],
+            "label_english": row["LABEL_ENGLISH"],
+            "survey": row["Survey"],
             # Use the same label as what we are encoding
             "label": f"{row['DOMAIN_ENGLISH']} -- {row['Varname']}: {row['LABEL_ENGLISH']}",
             "encode": f"{readable_domain} -- {readable_varname}: {row['LABEL_ENGLISH']}"
