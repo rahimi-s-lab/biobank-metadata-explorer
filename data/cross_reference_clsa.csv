@@ -1,0 +1,293 @@
+Feature,Source section,Varname,Category,Subcategory,Code,Included in,Encode
+AMI (Acute Myocardial Infarction),MACE,Ischemic Heart Disease5,Questionnaire,Physical health,IHD; COM,"bl, fu1, fu2",Questionnaire: Ischemic Heart Disease5
+AMI (Acute Myocardial Infarction),MACE,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
+AMI (Acute Myocardial Infarction),MACE,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+AMI (Acute Myocardial Infarction),MACE,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+AMI (Acute Myocardial Infarction),MACE,Carotid Intima Media Thickness9,Physical assessments,,CI; COM,"bl, fu1, fu2",Physical assessments: Carotid Intima Media Thickness9
+AMI (Acute Myocardial Infarction),MACE,Hypertension5,Questionnaire,Physical health,HBP; COM,"bl, fu1, fu2",Questionnaire: Hypertension5
+AMI (Acute Myocardial Infarction),MACE,Stroke,Questionnaire,Physical health,STR; COM,"bl, fu1, fu2",Questionnaire: Stroke
+AMI (Acute Myocardial Infarction),MACE,Stroke,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Stroke
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Ischemic Heart Disease5,Questionnaire,Physical health,IHD; COM,"bl, fu1, fu2",Questionnaire: Ischemic Heart Disease5
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Carotid Intima Media Thickness9,Physical assessments,,CI; COM,"bl, fu1, fu2",Physical assessments: Carotid Intima Media Thickness9
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Aortic Valve Stenosis,Questionnaire,Physical health,AOR,fu2,Questionnaire: Aortic Valve Stenosis
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Blood Biomarkers,Blood biomarkers,,,"bl, fu1",Blood biomarkers: Blood Biomarkers
+Acute coronary syndrome or ischemic heart disease (ACS/IHD),MACE,Hypertension5,Questionnaire,Physical health,HBP; COM,"bl, fu1, fu2",Questionnaire: Hypertension5
+Stroke (either ischemic or hemorrhagic),MACE,Stroke,Questionnaire,Physical health,STR; COM,"bl, fu1, fu2",Questionnaire: Stroke
+Stroke (either ischemic or hemorrhagic),MACE,Stroke,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Stroke
+Stroke (either ischemic or hemorrhagic),MACE,Neurological,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Neurological
+Stroke (either ischemic or hemorrhagic),MACE,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+Stroke (either ischemic or hemorrhagic),MACE,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Stroke (either ischemic or hemorrhagic),MACE,Ischemic Heart Disease5,Questionnaire,Physical health,IHD; COM,"bl, fu1, fu2",Questionnaire: Ischemic Heart Disease5
+Stroke (either ischemic or hemorrhagic),MACE,Falls,Questionnaire,Physical health,FAL,"bl, fu1, fu2",Questionnaire: Falls
+Stroke (either ischemic or hemorrhagic),MACE,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Ischemic Heart Disease5,Questionnaire,Physical health,IHD; COM,"bl, fu1, fu2",Questionnaire: Ischemic Heart Disease5
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Carotid Intima Media Thickness9,Physical assessments,,CI; COM,"bl, fu1, fu2",Physical assessments: Carotid Intima Media Thickness9
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Aortic Valve Stenosis,Questionnaire,Physical health,AOR,fu2,Questionnaire: Aortic Valve Stenosis
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Tonometry,Physical assessments,,TON; COM,"bl, fu1, fu2",Physical assessments: Tonometry
+"Revascularization procedures (e.g., angioplasty, stent placement)",MACE,Stroke,Questionnaire,Physical health,STR; COM,"bl, fu1, fu2",Questionnaire: Stroke
+"Feeling nervous, anxious or on edge",GAD-7,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+"Feeling nervous, anxious or on edge",GAD-7,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+"Feeling nervous, anxious or on edge",GAD-7,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+"Feeling nervous, anxious or on edge",GAD-7,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+"Feeling nervous, anxious or on edge",GAD-7,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
+Not being able to stop or control worrying,GAD-7,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Not being able to stop or control worrying,GAD-7,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+Not being able to stop or control worrying,GAD-7,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Not being able to stop or control worrying,GAD-7,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Not being able to stop or control worrying,GAD-7,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+Worrying too much about different things,GAD-7,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Worrying too much about different things,GAD-7,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+Worrying too much about different things,GAD-7,OtherConditions,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: OtherConditions
+Worrying too much about different things,GAD-7,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Worrying too much about different things,GAD-7,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Trouble relaxing,GAD-7,Sleep,Questionnaire,Physical health,SLE; COM,"bl, fu1, fu2",Questionnaire: Sleep
+Trouble relaxing,GAD-7,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Trouble relaxing,GAD-7,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+Trouble relaxing,GAD-7,Snoring,Questionnaire,Physical health,SNO; COM,"bl, fu1, fu2",Questionnaire: Snoring
+Trouble relaxing,GAD-7,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Being so restless that it is hard to sit,GAD-7,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Being so restless that it is hard to sit,GAD-7,Sitting Height,Physical assessments,,SIT; COM,fu2,Physical assessments: Sitting Height
+Being so restless that it is hard to sit,GAD-7,Sleep,Questionnaire,Physical health,SLE; COM,"bl, fu1, fu2",Questionnaire: Sleep
+Being so restless that it is hard to sit,GAD-7,Pain and Discomfort,Questionnaire,Physical health,HUP,"bl, fu1, fu2",Questionnaire: Pain and Discomfort
+Being so restless that it is hard to sit,GAD-7,Chair Rise: Balance and Coordination,Physical assessments,,CR; COM,"bl, fu1, fu2",Physical assessments: Chair Rise: Balance and Coordination
+Becoming easily annoyed or irritable,GAD-7,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Becoming easily annoyed or irritable,GAD-7,Pain and Discomfort,Questionnaire,Physical health,HUP,"bl, fu1, fu2",Questionnaire: Pain and Discomfort
+Becoming easily annoyed or irritable,GAD-7,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+Becoming easily annoyed or irritable,GAD-7,Neuro-psychiatric5,Questionnaire,Physical health,DPR; COM,"bl, fu1, fu2",Questionnaire: Neuro-psychiatric5
+Becoming easily annoyed or irritable,GAD-7,Personality Traits,Questionnaire,Psychological health,PER; COM,"bl, fu1",Questionnaire: Personality Traits
+Feeling afraid as if something awful might happen,GAD-7,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Feeling afraid as if something awful might happen,GAD-7,Posttraumatic Stress Disorder,Questionnaire,Psychological health,PSD,"bl, fu2",Questionnaire: Posttraumatic Stress Disorder
+Feeling afraid as if something awful might happen,GAD-7,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+Feeling afraid as if something awful might happen,GAD-7,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Feeling afraid as if something awful might happen,GAD-7,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Little interest or pleasure in doing things,PHQ-9,Subjective Cognitive Decline,Questionnaire,Cognition scores,SCD,"fu1, fu2",Questionnaire: Subjective Cognitive Decline
+Little interest or pleasure in doing things,PHQ-9,Instrumental Activities ofDaily Living,Questionnaire,Physical health,IAL,"bl, fu1, fu2",Questionnaire: Instrumental Activities ofDaily Living
+Little interest or pleasure in doing things,PHQ-9,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Little interest or pleasure in doing things,PHQ-9,Neuro-psychiatric5,Questionnaire,Physical health,DPR; COM,"bl, fu1, fu2",Questionnaire: Neuro-psychiatric5
+Little interest or pleasure in doing things,PHQ-9,Loneliness Scale,Questionnaire,Psychological health,LONE,"fu1, fu2",Questionnaire: Loneliness Scale
+"Feeling down, depressed, or hopeless",PHQ-9,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+"Feeling down, depressed, or hopeless",PHQ-9,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+"Feeling down, depressed, or hopeless",PHQ-9,Loneliness Scale,Questionnaire,Psychological health,LONE,"fu1, fu2",Questionnaire: Loneliness Scale
+"Feeling down, depressed, or hopeless",PHQ-9,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+"Feeling down, depressed, or hopeless",PHQ-9,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+"Trouble falling or staying asleep, or sleeping too much",PHQ-9,Sleep,Questionnaire,Physical health,SLE; COM,"bl, fu1, fu2",Questionnaire: Sleep
+"Trouble falling or staying asleep, or sleeping too much",PHQ-9,Falls,Questionnaire,Physical health,FAL,"bl, fu1, fu2",Questionnaire: Falls
+"Trouble falling or staying asleep, or sleeping too much",PHQ-9,Snoring,Questionnaire,Physical health,SNO; COM,"bl, fu1, fu2",Questionnaire: Snoring
+"Trouble falling or staying asleep, or sleeping too much",PHQ-9,Falls and Consumer Products,Questionnaire,Physical health,FAL,bl,Questionnaire: Falls and Consumer Products
+"Trouble falling or staying asleep, or sleeping too much",PHQ-9,Neuro-psychiatric5,Questionnaire,Physical health,DPR; COM,"bl, fu1, fu2",Questionnaire: Neuro-psychiatric5
+Feeling tired or having little energy,PHQ-9,Sleep,Questionnaire,Physical health,SLE; COM,"bl, fu1, fu2",Questionnaire: Sleep
+Feeling tired or having little energy,PHQ-9,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Feeling tired or having little energy,PHQ-9,Subjective Cognitive Decline,Questionnaire,Cognition scores,SCD,"fu1, fu2",Questionnaire: Subjective Cognitive Decline
+Feeling tired or having little energy,PHQ-9,Physical Activities,Questionnaire,Lifestyle and Behavior,PA2,"bl, fu1, fu2",Questionnaire: Physical Activities
+Feeling tired or having little energy,PHQ-9,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Poor appetite or overeating,PHQ-9,Nutritional Risk,Questionnaire,Lifestyle and Behavior,NUR,"bl, fu1, fu2",Questionnaire: Nutritional Risk
+Poor appetite or overeating,PHQ-9,Nutrition: Short DietQuestionnaire,Questionnaire,Lifestyle and Behavior,NUT; COM,"bl, fu1, fu2",Questionnaire: Nutrition: Short DietQuestionnaire
+Poor appetite or overeating,PHQ-9,Gastrointestinal,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Gastrointestinal
+Poor appetite or overeating,PHQ-9,General Health,Questionnaire,Physical health,GEN,"bl, fu1, fu2",Questionnaire: General Health
+Poor appetite or overeating,PHQ-9,Diseases of theeye,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Diseases of theeye
+Feeling bad about yourself – or that you are a failure or have let yourself or your family down,PHQ-9,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Feeling bad about yourself – or that you are a failure or have let yourself or your family down,PHQ-9,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Feeling bad about yourself – or that you are a failure or have let yourself or your family down,PHQ-9,Loneliness Scale,Questionnaire,Psychological health,LONE,"fu1, fu2",Questionnaire: Loneliness Scale
+Feeling bad about yourself – or that you are a failure or have let yourself or your family down,PHQ-9,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Feeling bad about yourself – or that you are a failure or have let yourself or your family down,PHQ-9,Social Support –Availability,Questionnaire,Social health,SSA,"bl, fuq, fu2",Questionnaire: Social Support –Availability
+"Trouble concentrating on things, such as reading the newspaper or watching television",PHQ-9,Neurological,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Neurological
+"Trouble concentrating on things, such as reading the newspaper or watching television",PHQ-9,Subjective Cognitive Decline,Questionnaire,Cognition scores,SCD,"fu1, fu2",Questionnaire: Subjective Cognitive Decline
+"Trouble concentrating on things, such as reading the newspaper or watching television",PHQ-9,Neuro-psychiatric5,Questionnaire,Physical health,DPR; COM,"bl, fu1, fu2",Questionnaire: Neuro-psychiatric5
+"Trouble concentrating on things, such as reading the newspaper or watching television",PHQ-9,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+"Trouble concentrating on things, such as reading the newspaper or watching television",PHQ-9,Basic Activities of Daily Living,Questionnaire,Physical health,ADL,"bl, fu1, fu2",Questionnaire: Basic Activities of Daily Living
+Moving or speaking so slowly that other people could have noticed. Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual,PHQ-9,Parkinsonism5,Questionnaire,Physical health,PKD,"bl, fu1, fu2",Questionnaire: Parkinsonism5
+Moving or speaking so slowly that other people could have noticed. Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual,PHQ-9,Choice Reaction Time,Questionnaire,Cognition scores,CRT; COM,"bl, fu1, fu2",Questionnaire: Choice Reaction Time
+Moving or speaking so slowly that other people could have noticed. Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual,PHQ-9,Mental AlternationTest,Questionnaire,Cognition scores,COG,"bl, fu1, fu2",Questionnaire: Mental AlternationTest
+Moving or speaking so slowly that other people could have noticed. Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual,PHQ-9,Standing Balance,Physical assessments,,BAL; COM,"bl, fu1, fu2",Physical assessments: Standing Balance
+Moving or speaking so slowly that other people could have noticed. Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual,PHQ-9,Timed Get Up and Go,Physical assessments,,TUG; COM,"bl, fu1, fu2",Physical assessments: Timed Get Up and Go
+"Thoughts that you would be better off dead, or of hurting yourself in some way",PHQ-9,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+"Thoughts that you would be better off dead, or of hurting yourself in some way",PHQ-9,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+"Thoughts that you would be better off dead, or of hurting yourself in some way",PHQ-9,Subjective Cognitive Decline,Questionnaire,Cognition scores,SCD,"fu1, fu2",Questionnaire: Subjective Cognitive Decline
+"Thoughts that you would be better off dead, or of hurting yourself in some way",PHQ-9,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+"Thoughts that you would be better off dead, or of hurting yourself in some way",PHQ-9,Loneliness Scale,Questionnaire,Psychological health,LONE,"fu1, fu2",Questionnaire: Loneliness Scale
+Which race category best describes you?,Race,Ethnicity1,Questionnaire,Socio-demographic,SDC,bl,Questionnaire: Ethnicity1
+Which race category best describes you?,Race,Country of birth,Questionnaire,Socio-demographic,SDC,bl,Questionnaire: Country of birth
+Which race category best describes you?,Race,Personality Traits,Questionnaire,Psychological health,PER; COM,"bl, fu1",Questionnaire: Personality Traits
+Which race category best describes you?,Race,Gender Identity,Questionnaire,Socio-demographic,SDC,"fu1, fu2",Questionnaire: Gender Identity
+Which race category best describes you?,Race,Self-report Height and Weight,Questionnaire,Physical health,HWT; TRM,"bl, fu1, fu2",Questionnaire: Self-report Height and Weight
+What is the highest level of education you have completed?,Education,Education,Questionnaire,Socio-demographic,ED,"bl, fu1, fu2",Questionnaire: Education
+What is the highest level of education you have completed?,Education,Retirement Status,Questionnaire,Labour force,RET,"bl, fu1, fu2",Questionnaire: Retirement Status
+What is the highest level of education you have completed?,Education,Social Inequality,Questionnaire,Social health,SEQ,"bl, fu1",Questionnaire: Social Inequality
+What is the highest level of education you have completed?,Education,Income,Questionnaire,Socio-demographic,INC,"bl, fu1, fu2",Questionnaire: Income
+What is the highest level of education you have completed?,Education,Country of birth,Questionnaire,Socio-demographic,SDC,bl,Questionnaire: Country of birth
+Are you currently employed?,Employment,Labour Force,Questionnaire,Labour force,LBF,"bl, fu1, fu2",Questionnaire: Labour Force
+Are you currently employed?,Employment,Labour Force – open text question7,Questionnaire,Labour force,,"bl, fu1",Questionnaire: Labour Force – open text question7
+Are you currently employed?,Employment,Retirement Status,Questionnaire,Labour force,RET,"bl, fu1, fu2",Questionnaire: Retirement Status
+Are you currently employed?,Employment,Income,Questionnaire,Socio-demographic,INC,"bl, fu1, fu2",Questionnaire: Income
+Are you currently employed?,Employment,Pre-Retirement LabourForce Participation,Questionnaire,Labour force,LFP,"bl, fu1, fu2",Questionnaire: Pre-Retirement LabourForce Participation
+Marital Status,Marital status,Marital status,Questionnaire,Socio-demographic,SDC,"bl, fu1, fu2",Questionnaire: Marital status
+Marital Status,Marital status,Retirement Status,Questionnaire,Labour force,RET,"bl, fu1, fu2",Questionnaire: Retirement Status
+Marital Status,Marital status,Income,Questionnaire,Socio-demographic,INC,"bl, fu1, fu2",Questionnaire: Income
+Marital Status,Marital status,SocialParticipation,Questionnaire,Social health,SPA,"bl, fuq, fu2",Questionnaire: SocialParticipation
+Marital Status,Marital status,Sex,Questionnaire,Socio-demographic,SEX,bl,Questionnaire: Sex
+Household Income,Income,Income,Questionnaire,Socio-demographic,INC,"bl, fu1, fu2",Questionnaire: Income
+Household Income,Income,Wealth,Questionnaire,Socio-demographic,WEA,"bl, fu1, fu2",Questionnaire: Wealth
+Household Income,Income,Home Ownership,Questionnaire,Socio-demographic,OWN,"bl, fu1, fu2",Questionnaire: Home Ownership
+Household Income,Income,Labour Force – open text question7,Questionnaire,Labour force,,"bl, fu1",Questionnaire: Labour Force – open text question7
+Household Income,Income,Labour Force,Questionnaire,Labour force,LBF,"bl, fu1, fu2",Questionnaire: Labour Force
+Health insurance,Health insurance,HealthCare Utilization,Questionnaire,Physical health,HCU,"bl, fu1, fu2",Questionnaire: HealthCare Utilization
+Health insurance,Health insurance,Unmet Health Care Needs,Questionnaire,Physical health,MET,"fu1, fu2",Questionnaire: Unmet Health Care Needs
+Health insurance,Health insurance,General Health,Questionnaire,Physical health,GEN,"bl, fu1, fu2",Questionnaire: General Health
+Health insurance,Health insurance,Care Receiving 1,Questionnaire,Social health,CR1,"bl, fuq, fu2",Questionnaire: Care Receiving 1
+Health insurance,Health insurance,Self-reported Chronic Conditions,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Self-reported Chronic Conditions
+"Do you have any chronic health conditions? (e.g., diabetes, hypertension)",Health,Self-reported Chronic Conditions,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Self-reported Chronic Conditions
+"Do you have any chronic health conditions? (e.g., diabetes, hypertension)",Health,General Health,Questionnaire,Physical health,GEN,"bl, fu1, fu2",Questionnaire: General Health
+"Do you have any chronic health conditions? (e.g., diabetes, hypertension)",Health,Hypertension5,Questionnaire,Physical health,HBP; COM,"bl, fu1, fu2",Questionnaire: Hypertension5
+"Do you have any chronic health conditions? (e.g., diabetes, hypertension)",Health,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+"Do you have any chronic health conditions? (e.g., diabetes, hypertension)",Health,General Health – open text on healthy aging,Questionnaire,Physical health,sur le vieillissementen santé,"bl, fu1, fu2",Questionnaire: General Health – open text on healthy aging
+"Have you ever been diagnosed with a mental health disorder? (e.g., depression, anxiety)",Health,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+"Have you ever been diagnosed with a mental health disorder? (e.g., depression, anxiety)",Health,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+"Have you ever been diagnosed with a mental health disorder? (e.g., depression, anxiety)",Health,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+"Have you ever been diagnosed with a mental health disorder? (e.g., depression, anxiety)",Health,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+"Have you ever been diagnosed with a mental health disorder? (e.g., depression, anxiety)",Health,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+I get the emotional support that I need,Family and friends,Social Support –Availability,Questionnaire,Social health,SSA,"bl, fuq, fu2",Questionnaire: Social Support –Availability
+I get the emotional support that I need,Family and friends,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+I get the emotional support that I need,Family and friends,Resiliency Scale,Questionnaire,Psychological health,RES; COM,fu2,Questionnaire: Resiliency Scale
+I get the emotional support that I need,Family and friends,CareReceiving 2,Questionnaire,Social health,,"bl, fuq, fu2",Questionnaire: CareReceiving 2
+I get the emotional support that I need,Family and friends,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+"Active exercise (30 min, e.g., Running, cycling, fast walk)",Activity,Timed Get Up and Go,Physical assessments,,TUG; COM,"bl, fu1, fu2",Physical assessments: Timed Get Up and Go
+"Active exercise (30 min, e.g., Running, cycling, fast walk)",Activity,Physical Activities,Questionnaire,Lifestyle and Behavior,PA2,"bl, fu1, fu2",Questionnaire: Physical Activities
+"Active exercise (30 min, e.g., Running, cycling, fast walk)",Activity,4 Metre Walk,Physical assessments,,WLK;COM,"bl, fu1, fu2",Physical assessments: 4 Metre Walk
+"Active exercise (30 min, e.g., Running, cycling, fast walk)",Activity,Basic Activities of,Physical assessments,,,"bl, fu1, fu2",Physical assessments: Basic Activities of
+"Active exercise (30 min, e.g., Running, cycling, fast walk)",Activity,Whole Body,Physical assessments,,,"bl, fu1, fu2",Physical assessments: Whole Body
+Relaxation and enjoyment of leisure time,Activity,Satisfaction with Life,Questionnaire,Psychological health,SLS,"bl, fu1, fu2",Questionnaire: Satisfaction with Life
+Relaxation and enjoyment of leisure time,Activity,Instrumental Activities ofDaily Living,Questionnaire,Physical health,IAL,"bl, fu1, fu2",Questionnaire: Instrumental Activities ofDaily Living
+Relaxation and enjoyment of leisure time,Activity,Physical Activities,Questionnaire,Lifestyle and Behavior,PA2,"bl, fu1, fu2",Questionnaire: Physical Activities
+Relaxation and enjoyment of leisure time,Activity,Basic Activities of Daily Living,Questionnaire,Physical health,ADL,"bl, fu1, fu2",Questionnaire: Basic Activities of Daily Living
+Relaxation and enjoyment of leisure time,Activity,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+Nutrition: Balanced meals,Nutrition,Nutrition: Short DietQuestionnaire,Questionnaire,Lifestyle and Behavior,NUT; COM,"bl, fu1, fu2",Questionnaire: Nutrition: Short DietQuestionnaire
+Nutrition: Balanced meals,Nutrition,Nutritional Risk,Questionnaire,Lifestyle and Behavior,NUR,"bl, fu1, fu2",Questionnaire: Nutritional Risk
+Nutrition: Balanced meals,Nutrition,Body Composition (Whole Body andBody Parts),Physical assessments,,Whole Body andBody Parts,"bl, fu1, fu2",Physical assessments: Body Composition (Whole Body andBody Parts)
+Nutrition: Balanced meals,Nutrition,General Health – open text on healthy aging,Questionnaire,Physical health,sur le vieillissementen santé,"bl, fu1, fu2",Questionnaire: General Health – open text on healthy aging
+Nutrition: Balanced meals,Nutrition,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU,bl,Questionnaire: Dietary Supplement Use
+Nutrition: Breakfast daily,Nutrition,Nutrition: Short DietQuestionnaire,Questionnaire,Lifestyle and Behavior,NUT; COM,"bl, fu1, fu2",Questionnaire: Nutrition: Short DietQuestionnaire
+Nutrition: Breakfast daily,Nutrition,Nutritional Risk,Questionnaire,Lifestyle and Behavior,NUR,"bl, fu1, fu2",Questionnaire: Nutritional Risk
+Nutrition: Breakfast daily,Nutrition,Basic Activities of Daily Living,Questionnaire,Physical health,ADL,"bl, fu1, fu2",Questionnaire: Basic Activities of Daily Living
+Nutrition: Breakfast daily,Nutrition,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU,bl,Questionnaire: Dietary Supplement Use
+Nutrition: Breakfast daily,Nutrition,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU; TRM,"fu1, fu2",Questionnaire: Dietary Supplement Use
+"Nutrition: Excess sugar, salt, junk food, animal fats",Nutrition,Nutrition: Short DietQuestionnaire,Questionnaire,Lifestyle and Behavior,NUT; COM,"bl, fu1, fu2",Questionnaire: Nutrition: Short DietQuestionnaire
+"Nutrition: Excess sugar, salt, junk food, animal fats",Nutrition,Nutritional Risk,Questionnaire,Lifestyle and Behavior,NUR,"bl, fu1, fu2",Questionnaire: Nutritional Risk
+"Nutrition: Excess sugar, salt, junk food, animal fats",Nutrition,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU,bl,Questionnaire: Dietary Supplement Use
+"Nutrition: Excess sugar, salt, junk food, animal fats",Nutrition,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU; TRM,"fu1, fu2",Questionnaire: Dietary Supplement Use
+"Nutrition: Excess sugar, salt, junk food, animal fats",Nutrition,General Health,Questionnaire,Physical health,GEN,"bl, fu1, fu2",Questionnaire: General Health
+Over-weight/under-weight,Tobacco and toxins,Measured Height and Weight2,Questionnaire,Physical health,"WGT, HGT; COM","bl, fu1, fu2",Questionnaire: Measured Height and Weight2
+Over-weight/under-weight,Tobacco and toxins,Self-report Height and Weight,Questionnaire,Physical health,HWT; TRM,"bl, fu1, fu2",Questionnaire: Self-report Height and Weight
+Over-weight/under-weight,Tobacco and toxins,Hip and WaistCircumference,Physical assessments,,WHC; COM,"bl, fu1, fu2",Physical assessments: Hip and WaistCircumference
+Over-weight/under-weight,Tobacco and toxins,Body Composition (Whole Body andBody Parts),Physical assessments,,Whole Body andBody Parts,"bl, fu1, fu2",Physical assessments: Body Composition (Whole Body andBody Parts)
+Over-weight/under-weight,Tobacco and toxins,Sitting Height,Physical assessments,,SIT; COM,fu2,Physical assessments: Sitting Height
+Tobacco use/smoking,Tobacco and toxins,Smoking,Questionnaire,Lifestyle and Behavior,SMK,"bl, fu1, fu2",Questionnaire: Smoking
+Tobacco use/smoking,Tobacco and toxins,Smoke exposure11,Environmental indicators,Air category,,"fu1, fu2",Environmental indicators: Smoke exposure11
+Tobacco use/smoking,Tobacco and toxins,Preventative Health Behaviours,Questionnaire,Physical health,PHB; COM,fu2,Questionnaire: Preventative Health Behaviours
+Tobacco use/smoking,Tobacco and toxins,Preventative Health Behaviours,Questionnaire,Physical health,PHB,fu1,Questionnaire: Preventative Health Behaviours
+Tobacco use/smoking,Tobacco and toxins,Preventative Health Behaviours,Questionnaire,Physical health,PHB,"fu1, fu2",Questionnaire: Preventative Health Behaviours
+"Drugs, prescribed or unprescribed",Tobacco and toxins,Medication Use,Questionnaire,Physical health,MED; TRM,"bl, fu1, fu2",Questionnaire: Medication Use
+"Drugs, prescribed or unprescribed",Tobacco and toxins,Medications (Baseline and Follow-up 1 only),Questionnaire,Medications,Baseline and Follow-up 1 only,"bl, fu1, fu2",Questionnaire: Medications (Baseline and Follow-up 1 only)
+"Drugs, prescribed or unprescribed",Tobacco and toxins,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU,bl,Questionnaire: Dietary Supplement Use
+"Drugs, prescribed or unprescribed",Tobacco and toxins,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU; TRM,"fu1, fu2",Questionnaire: Dietary Supplement Use
+"Drugs, prescribed or unprescribed",Tobacco and toxins,Self-reported Chronic Conditions,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Self-reported Chronic Conditions
+"Regular coffee, tea, sugary drinks",Tobacco and toxins,Nutrition: Short DietQuestionnaire,Questionnaire,Lifestyle and Behavior,NUT; COM,"bl, fu1, fu2",Questionnaire: Nutrition: Short DietQuestionnaire
+"Regular coffee, tea, sugary drinks",Tobacco and toxins,Basic Activities of Daily Living,Questionnaire,Physical health,ADL,"bl, fu1, fu2",Questionnaire: Basic Activities of Daily Living
+"Regular coffee, tea, sugary drinks",Tobacco and toxins,General Health,Questionnaire,Physical health,GEN,"bl, fu1, fu2",Questionnaire: General Health
+"Regular coffee, tea, sugary drinks",Tobacco and toxins,Alcohol Use,Questionnaire,Lifestyle and Behavior,ALC,"bl, fu1, fu2",Questionnaire: Alcohol Use
+"Regular coffee, tea, sugary drinks",Tobacco and toxins,General Health – open text on healthy aging,Questionnaire,Physical health,sur le vieillissementen santé,"bl, fu1, fu2",Questionnaire: General Health – open text on healthy aging
+Alcohol intake,Alcohol,Alcohol Use,Questionnaire,Lifestyle and Behavior,ALC,"bl, fu1, fu2",Questionnaire: Alcohol Use
+Alcohol intake,Alcohol,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU,bl,Questionnaire: Dietary Supplement Use
+Alcohol intake,Alcohol,Dietary Supplement Use,Questionnaire,Lifestyle and Behavior,DSU; TRM,"fu1, fu2",Questionnaire: Dietary Supplement Use
+Alcohol intake,Alcohol,Nutritional Risk,Questionnaire,Lifestyle and Behavior,NUR,"bl, fu1, fu2",Questionnaire: Nutritional Risk
+Alcohol intake,Alcohol,Nutrition: Short DietQuestionnaire,Questionnaire,Lifestyle and Behavior,NUT; COM,"bl, fu1, fu2",Questionnaire: Nutrition: Short DietQuestionnaire
+Sleep schedule: 7-9 hours sleep per night,Sleep,Sleep,Questionnaire,Physical health,SLE; COM,"bl, fu1, fu2",Questionnaire: Sleep
+Sleep schedule: 7-9 hours sleep per night,Sleep,Snoring,Questionnaire,Physical health,SNO; COM,"bl, fu1, fu2",Questionnaire: Snoring
+Sleep schedule: 7-9 hours sleep per night,Sleep,Instrumental Activities ofDaily Living,Questionnaire,Physical health,IAL,"bl, fu1, fu2",Questionnaire: Instrumental Activities ofDaily Living
+Sleep schedule: 7-9 hours sleep per night,Sleep,Basic Activities of Daily Living,Questionnaire,Physical health,ADL,"bl, fu1, fu2",Questionnaire: Basic Activities of Daily Living
+Sleep schedule: 7-9 hours sleep per night,Sleep,Nighttime Light11,Environmental indicators,Neighborhood factors,,bl,Environmental indicators: Nighttime Light11
+Frequency of seat belt use,Seat belt,Falls and Consumer Products,Questionnaire,Physical health,FAL,bl,Questionnaire: Falls and Consumer Products
+Frequency of seat belt use,Seat belt,Timed Get Up and Go,Physical assessments,,TUG; COM,"bl, fu1, fu2",Physical assessments: Timed Get Up and Go
+Frequency of seat belt use,Seat belt,Injuries,Questionnaire,Physical health,INJ,"bl, fu1, fu2",Questionnaire: Injuries
+Frequency of seat belt use,Seat belt,Physical Activities,Questionnaire,Lifestyle and Behavior,PA2,"bl, fu1, fu2",Questionnaire: Physical Activities
+Frequency of seat belt use,Seat belt,Falls,Questionnaire,Physical health,FAL,"bl, fu1, fu2",Questionnaire: Falls
+Major stressful events in the past year,Stress,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Major stressful events in the past year,Stress,Posttraumatic Stress Disorder,Questionnaire,Psychological health,PSD,"bl, fu2",Questionnaire: Posttraumatic Stress Disorder
+Major stressful events in the past year,Stress,Self-reported Chronic Conditions,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Self-reported Chronic Conditions
+Major stressful events in the past year,Stress,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Major stressful events in the past year,Stress,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+"Type of personality: sense of time urgency, impatience",Personality,Personality Traits,Questionnaire,Psychological health,PER; COM,"bl, fu1",Questionnaire: Personality Traits
+"Type of personality: sense of time urgency, impatience",Personality,Choice Reaction Time,Questionnaire,Cognition scores,CRT; COM,"bl, fu1, fu2",Questionnaire: Choice Reaction Time
+"Type of personality: sense of time urgency, impatience",Personality,Instrumental Activities ofDaily Living,Questionnaire,Physical health,IAL,"bl, fu1, fu2",Questionnaire: Instrumental Activities ofDaily Living
+"Type of personality: sense of time urgency, impatience",Personality,Timed Get Up and Go,Physical assessments,,TUG; COM,"bl, fu1, fu2",Physical assessments: Timed Get Up and Go
+"Type of personality: sense of time urgency, impatience",Personality,Mental AlternationTest,Questionnaire,Cognition scores,COG,"bl, fu1, fu2",Questionnaire: Mental AlternationTest
+Competitive and aggressive,Personality,Choice Reaction Time,Questionnaire,Cognition scores,CRT; COM,"bl, fu1, fu2",Questionnaire: Choice Reaction Time
+Competitive and aggressive,Personality,Grip Strength,Physical assessments,,GS; COM,"bl, fu1, fu2",Physical assessments: Grip Strength
+Competitive and aggressive,Personality,Personality Traits,Questionnaire,Psychological health,PER; COM,"bl, fu1",Questionnaire: Personality Traits
+Competitive and aggressive,Personality,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Competitive and aggressive,Personality,Epigenetics,Epigenetics,,,bl,Epigenetics: Epigenetics
+Feeling anger and hostility,Personality,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Feeling anger and hostility,Personality,Pain and Discomfort,Questionnaire,Physical health,HUP,"bl, fu1, fu2",Questionnaire: Pain and Discomfort
+Feeling anger and hostility,Personality,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Feeling anger and hostility,Personality,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+Feeling anger and hostility,Personality,Posttraumatic Stress Disorder,Questionnaire,Psychological health,PSD,"bl, fu2",Questionnaire: Posttraumatic Stress Disorder
+Positive thinker,Insight,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+Positive thinker,Insight,Satisfaction with Life,Questionnaire,Psychological health,SLS,"bl, fu1, fu2",Questionnaire: Satisfaction with Life
+Positive thinker,Insight,Personality Traits,Questionnaire,Psychological health,PER; COM,"bl, fu1",Questionnaire: Personality Traits
+Positive thinker,Insight,Mental AlternationTest,Questionnaire,Cognition scores,COG,"bl, fu1, fu2",Questionnaire: Mental AlternationTest
+Positive thinker,Insight,Resiliency Scale,Questionnaire,Psychological health,RES; COM,fu2,Questionnaire: Resiliency Scale
+"Anxious, worried",Insight,Generalized Anxiety Disorder,Questionnaire,Psychological health,GAD,fu2,Questionnaire: Generalized Anxiety Disorder
+"Anxious, worried",Insight,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+"Anxious, worried",Insight,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+"Anxious, worried",Insight,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+"Anxious, worried",Insight,Posttraumatic Stress Disorder,Questionnaire,Psychological health,PSD,"bl, fu2",Questionnaire: Posttraumatic Stress Disorder
+Depressed,Insight,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Depressed,Insight,Loneliness Scale,Questionnaire,Psychological health,LONE,"fu1, fu2",Questionnaire: Loneliness Scale
+Depressed,Insight,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Depressed,Insight,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Depressed,Insight,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+Satisfied in job role,Career,Satisfaction with Life,Questionnaire,Psychological health,SLS,"bl, fu1, fu2",Questionnaire: Satisfaction with Life
+Satisfied in job role,Career,Positive Mental Health,Questionnaire,Psychological health,PMH,fu2,Questionnaire: Positive Mental Health
+Satisfied in job role,Career,Labour Force,Questionnaire,Labour force,LBF,"bl, fu1, fu2",Questionnaire: Labour Force
+Satisfied in job role,Career,Retirement Status,Questionnaire,Labour force,RET,"bl, fu1, fu2",Questionnaire: Retirement Status
+Satisfied in job role,Career,Labour Force – open text question7,Questionnaire,Labour force,,"bl, fu1",Questionnaire: Labour Force – open text question7
+Good relationship with coworkers,Careeer,Social Cohesion,Questionnaire,Social health,SPA,"fu1, fu2",Questionnaire: Social Cohesion
+Good relationship with coworkers,Careeer,Social Support –Availability,Questionnaire,Social health,SSA,"bl, fuq, fu2",Questionnaire: Social Support –Availability
+Good relationship with coworkers,Careeer,SocialParticipation,Questionnaire,Social health,SPA,"bl, fuq, fu2",Questionnaire: SocialParticipation
+Good relationship with coworkers,Careeer,OnlineSocial Networking,Questionnaire,Social health,INT,soins (CR2),Questionnaire: OnlineSocial Networking
+Good relationship with coworkers,Careeer,Social Networks,Questionnaire,Social health,SN,"bl, fuq, fu2",Questionnaire: Social Networks
+Heart rate: average daily,Oura,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Heart rate: average daily,Oura,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
+Heart rate: average daily,Oura,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+Heart rate: average daily,Oura,Physical Activities,Questionnaire,Lifestyle and Behavior,PA2,"bl, fu1, fu2",Questionnaire: Physical Activities
+Heart rate: average daily,Oura,Basic Activities of Daily Living,Questionnaire,Physical health,ADL,"bl, fu1, fu2",Questionnaire: Basic Activities of Daily Living
+Heart rate: time series sessions,Oura,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Heart rate: time series sessions,Oura,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
+Heart rate: time series sessions,Oura,Timed Get Up and Go,Physical assessments,,TUG; COM,"bl, fu1, fu2",Physical assessments: Timed Get Up and Go
+Heart rate: time series sessions,Oura,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+Heart rate: time series sessions,Oura,Event-Based ProspectiveMemory Test,Questionnaire,Cognition scores,PMT; COM,"bl, fu1, fu2",Questionnaire: Event-Based ProspectiveMemory Test
+Blood oxygen level Vo2 max,Oura,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Blood oxygen level Vo2 max,Oura,Spirometry,Physical assessments,,SPR; COM,"bl, fu1, fu2",Physical assessments: Spirometry
+Blood oxygen level Vo2 max,Oura,Physical Activities,Questionnaire,Lifestyle and Behavior,PA2,"bl, fu1, fu2",Questionnaire: Physical Activities
+Blood oxygen level Vo2 max,Oura,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+Blood oxygen level Vo2 max,Oura,Timed Get Up and Go,Physical assessments,,TUG; COM,"bl, fu1, fu2",Physical assessments: Timed Get Up and Go
+Blood Oxygen leve SpO2,Oura,Spirometry,Physical assessments,,SPR; COM,"bl, fu1, fu2",Physical assessments: Spirometry
+Blood Oxygen leve SpO2,Oura,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Blood Oxygen leve SpO2,Oura,Respiratory,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Respiratory
+Blood Oxygen leve SpO2,Oura,Blood Biomarkers,Blood biomarkers,,,"bl, fu1",Blood biomarkers: Blood Biomarkers
+Blood Oxygen leve SpO2,Oura,Nitrogen Dioxide,Environmental indicators,Air category,,bl,Environmental indicators: Nitrogen Dioxide
+Stress,Oura,Psychological Distress,Questionnaire,Psychological health,K10; COM,"bl, fu1, fu2",Questionnaire: Psychological Distress
+Stress,Oura,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Stress,Oura,Depression,Questionnaire,Psychological health,DEP,"bl, fu1, fu2",Questionnaire: Depression
+Stress,Oura,Epigenetics,Epigenetics,,,bl,Epigenetics: Epigenetics
+Stress,Oura,Mental Health,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Mental Health
+Cardiovascular age (uses PPG sensor data to measure arterial thickness/stiffness) ,Oura,Pulse Rate and BloodPressure,Physical assessments,,BP; COM,"bl, fu1, fu2",Physical assessments: Pulse Rate and BloodPressure
+Cardiovascular age (uses PPG sensor data to measure arterial thickness/stiffness) ,Oura,Carotid Intima Media Thickness9,Physical assessments,,CI; COM,"bl, fu1, fu2",Physical assessments: Carotid Intima Media Thickness9
+Cardiovascular age (uses PPG sensor data to measure arterial thickness/stiffness) ,Oura,Cardiovascular,Questionnaire,Physical health,CCT/CCC,"bl, fu1, fu2",Questionnaire: Cardiovascular
+Cardiovascular age (uses PPG sensor data to measure arterial thickness/stiffness) ,Oura,Tonometry,Physical assessments,,TON; COM,"bl, fu1, fu2",Physical assessments: Tonometry
+Cardiovascular age (uses PPG sensor data to measure arterial thickness/stiffness) ,Oura,Electrocardiogram,Physical assessments,,ECG; COM,"bl, fu1, fu2",Physical assessments: Electrocardiogram
