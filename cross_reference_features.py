@@ -53,13 +53,29 @@ def cross_reference_features(store: VectorStore, input_file, output_file, metada
 def cross_reference_cartagene(input_file: str, output_file: str, model: str, k: int=3):
     # Example metadata mapping
     metadata_mapping = {
-        "Domain": "domain",
         "Varname": "varname",
+        "Domain": "domain",
         "Label english": "label_english",
-        "Encode": "encode",
         "Included in": "survey",
+        "Encode": "encode",
     }
     store = build_vector_indices(["cartagene"])["cartagene"]
+    return cross_reference_features(store, input_file, output_file, metadata_mapping, 
+                                    model=model, k=k)
+
+def cross_reference_clsa(input_file: str, output_file: str, model: str, k: int=3):
+    # Define metadata mapping for CLSA dataset
+    metadata_mapping = {
+        "Varname": "varname",
+        "Category": "category",
+        "Subcategory": "subcategory", 
+        "Code": "code",
+        "Included in": "availability",
+        "Encode": "encode"
+    }
+    
+    # Build vector index for CLSA dataset
+    store = build_vector_indices(["clsa"])["clsa"]
     return cross_reference_features(store, input_file, output_file, metadata_mapping, 
                                     model=model, k=k)
 
@@ -77,6 +93,7 @@ if __name__ == "__main__":
 
     function_map = {
         "cartagene": cross_reference_cartagene,
+        "clsa": cross_reference_clsa,
     }
 
     function_map[args.dataset](args.input, args.output, args.model, args.k)
