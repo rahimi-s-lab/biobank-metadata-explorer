@@ -10,7 +10,13 @@ def cross_reference_features(store: VectorStore, input_file, output_file, metada
     
     # Read input features
     print(f"Reading features from {input_file}...")
-    input_df = pd.read_excel(input_file)
+    # Read input file based on file extension
+    if ".xls" in input_file:
+        input_df = pd.read_excel(input_file)
+    elif ".csv" in input_file:
+        input_df = pd.read_csv(input_file)
+    else:
+        raise Exception("Input file must be either excel or csv. (.xls[x] or .csv)")
     
     # Initialize results dict with "Feature" and all mapped columns
     results = {
@@ -42,12 +48,11 @@ def cross_reference_features(store: VectorStore, input_file, output_file, metada
     # Create output dataframe and save to Excel and CSV
     print(f"Saving results to {output_file}...")
     output_df = pd.DataFrame(results)
-    output_df.to_excel(output_file, index=False)
-    
-    # Also save to CSV
-    csv_output_file = output_file.rsplit('.', 1)[0] + '.csv'
-    output_df.to_csv(csv_output_file, index=False)
-    print(f"Results saved to {output_file} and {csv_output_file}")
+    if "xlsx" in output_file:
+        output_df.to_excel(output_file, index=False)
+    elif "csv" in output_file: 
+        output_df.to_csv(output_file, index=False)
+    print(f"Results saved to {output_file}")
     print("Done!")
 
 def cross_reference_cartagene(input_file: str, output_file: str, model: str, k: int=3):
@@ -83,11 +88,11 @@ if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser(description="Cross-reference features with RAG system")
-    parser.add_argument("--input", type=str, default="input.xlsx", help="Input Excel file path")
-    parser.add_argument("--output", type=str, default="output.xlsx", help="Output Excel file path")
+    parser.add_argument("--input", type=str, default="data/dt_source_fields.xlsx", help="Input spreadsheet. Accepts xlsx and csv.")
+    parser.add_argument("--output", type=str, required=True, help="Output spreadsheet. Detects format based on file ending.")
+    parser.add_argument("--dataset", type=str, required=True, choices=["clsa", "cartagene"], help="Dataset to use (clsa or cartagene)")
     parser.add_argument("--model", type=str, default=MODEL_MXBAI, choices=MODELS, help="Model to use for embeddings")
     parser.add_argument("--k", type=int, default=3, help="Number of similar documents to retrieve")
-    parser.add_argument("--dataset", type=str, choices=["clsa", "cartagene"], required=True, help="Dataset to use (clsa or cartagene)")
     
     args = parser.parse_args()
 
