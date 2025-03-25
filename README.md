@@ -43,3 +43,12 @@ A cross reference file for Cartagene is already commited in this repo:
 
 ![Screenshot 2025-03-12 at 4 50 28 PM](https://github.com/user-attachments/assets/202d3fee-a4eb-450c-b1fe-1ac28d3a83c9)
 
+## Join/merge multiple spreadsheets
+Example usage: `python spreadsheet_joiner.py --spreadsheets data/dt_source_fields.xlsx data/cross_reference_cartagene.xlsx data/cross_reference_clsa.csv --spreadsheet-names source cartagene clsa --on Feature --fields source.Feature source.Section cartagene.Varname cartagene.Domain clsa.Varname cartagene.Domain clsa.Category clsa.Subcategory clsa.Code clsa."Included in" cartagene."Label english" cartagene.Encode clsa.Encode --output combined_cross_reference.csv`
+
+### Parameters
+- **--spreadsheets**: the spreadsheets to join. `dt_source_fields` should probably always be the first one.
+- **--spreadsheet-names**: aliases to be used for the spreadsheets above. Field names in the combined file will be prefixed by these aliases.
+- **--on**: the field to join on. Probably always "Feature" for our use case.
+- **--fields**: the fields to include in the final result. eg. in `cartagene.Varname`. `"cartagene"` references the alias we set in `--spreadsheet-names` for `cross_reference_cartagene.xlsx` and `Varname` references a column in that file.
+- **--output**: the output file. 
