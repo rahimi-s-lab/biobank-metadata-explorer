@@ -1,7 +1,18 @@
 import pandas as pd
 from rag import build_vector_index
 
-def cross_reference_features(input_file, output_file, model="openai_large", k=3):
+def cross_reference_features(input_file, output_file, metadata_mapping, model="openai_large", k=3):
+    """
+    Cross reference features with RAG system.
+    
+    Args:
+        input_file: Path to input Excel file with "Feature" column
+        output_file: Path to output Excel file
+        metadata_mapping: Dict mapping output column names to doc.metadata keys
+            e.g. {"Domain": "domain", "Variable": "varname"}
+        model: Model to use for embeddings
+        k: Number of similar documents to retrieve
+    """
     # Build the vector index
     print("Building vector index...")
     index = build_vector_index(model=model)
@@ -14,15 +25,11 @@ def cross_reference_features(input_file, output_file, model="openai_large", k=3)
     print(f"Reading features from {input_file}...")
     input_df = pd.read_excel(input_file)
     
-    # Initialize lists to store results
+    # Initialize results dict with "Feature" and all mapped columns
     results = {
-        "Feature": [],
-        "Source Section": [],
-        "Domain": [],
-        "Varname": [],
-        "Label english": [],
-        "Encode": []
+        "Feature": []
     }
+    results.update({output_col: [] for output_col in metadata_mapping.keys()})
     
     # Process each feature
     total_features = len(input_df)
@@ -38,11 +45,9 @@ def cross_reference_features(input_file, output_file, model="openai_large", k=3)
         # Store results for each returned document
         for doc in docs:
             results["Feature"].append(feature)
-            results["Source Section"].append(row["Section"])
-            results["Domain"].append(doc.metadata.get("domain", ""))
-            results["Varname"].append(doc.metadata.get("varname", ""))
-            results["Label english"].append(doc.metadata.get("label_english", ""))
-            results["Encode"].append(doc.metadata.get("encode", ""))
+            # Map each output column to its corresponding metadata value
+            for output_col, metadata_key in metadata_mapping.items():
+                results[output_col].append(doc.metadata.get(metadata_key, ""))
     
     # Create output dataframe and save to Excel
     print(f"Saving results to {output_file}...")
@@ -61,9 +66,19 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
+    # Example metadata mapping
+    metadata_mapping = {
+        "Source Section": "section",
+        "Domain": "domain",
+        "Varname": "varname",
+        "Label english": "label_english",
+        "Encode": "encode"
+    }
+    
     cross_reference_features(
         input_file=args.input,
         output_file=args.output,
+        metadata_mapping=metadata_mapping,
         model=args.model,
         k=args.k
     )
